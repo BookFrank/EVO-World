@@ -2,6 +2,8 @@ package com.tazine.evo.crontab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
@@ -15,6 +17,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class TimedTaskApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TimedTaskApplication.class, args);
+        ApplicationContext context = new SpringApplicationBuilder(TimedTaskApplication.class)
+            .run(args);
+        for (String s : context.getBeanDefinitionNames()){
+            System.out.println(s + " -- " + context.getBean(s).getClass().getName());
+        }
     }
 }

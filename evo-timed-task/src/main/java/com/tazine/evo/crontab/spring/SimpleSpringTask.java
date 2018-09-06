@@ -11,8 +11,8 @@ import org.springframework.scheduling.annotation.Scheduled;
  * @author jiaer.ly
  * @date 2018/09/05
  */
-@Configuration
-@EnableScheduling
+//@Configuration
+//@EnableScheduling
 public class SimpleSpringTask {
 
 

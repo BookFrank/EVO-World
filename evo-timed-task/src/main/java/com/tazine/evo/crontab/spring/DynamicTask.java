@@ -2,6 +2,7 @@ package com.tazine.evo.crontab.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Component;
@@ -24,10 +25,10 @@ public class DynamicTask {
 
     private ScheduledFuture<?> future;
 
-    @Bean
-    public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
-        return new ThreadPoolTaskScheduler();
-    }
+    //@Bean
+    //public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
+    //    return new ThreadPoolTaskScheduler();
+    //}
 
     @RequestMapping("/startCron")
     public String startCron(){
@@ -45,15 +46,20 @@ public class DynamicTask {
         return "stopCron";
     }
 
+    @Async
+    public void testAsync(){
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     private class MyRunnable implements Runnable{
         @Override
         public void run() {
-            System.out.println("UserDefined task run, " + new Date());
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            System.out.println("UserDefined task run, " + new Date() + " -- " + Thread.currentThread().getName());
+            testAsync();
         }
     }
 }
