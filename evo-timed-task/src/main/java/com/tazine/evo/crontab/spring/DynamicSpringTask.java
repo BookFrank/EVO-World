@@ -16,8 +16,8 @@ import java.util.Date;
  * @author jiaer.ly
  * @date 2018/09/05
  */
-@Configuration
-@EnableScheduling
+//@Configuration
+//@EnableScheduling
 public class DynamicSpringTask implements SchedulingConfigurer {
 
     public static String cron;

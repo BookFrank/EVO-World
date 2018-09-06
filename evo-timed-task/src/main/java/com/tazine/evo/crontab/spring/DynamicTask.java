@@ -44,11 +44,16 @@ public class DynamicTask {
         System.out.println("stop cron success");
         return "stopCron";
     }
-    
+
     private class MyRunnable implements Runnable{
         @Override
         public void run() {
             System.out.println("UserDefined task run, " + new Date());
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
