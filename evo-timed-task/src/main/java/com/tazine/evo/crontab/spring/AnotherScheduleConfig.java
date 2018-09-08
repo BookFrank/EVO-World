@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
 /**
  * 定时任务配置
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/09/06
  */
 @Configuration

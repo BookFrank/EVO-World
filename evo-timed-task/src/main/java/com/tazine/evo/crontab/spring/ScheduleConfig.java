@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 /**
  * 多线程执行定时任务 所有的定时任务都放在一个线程池中，定时任务启动时使用不同的线程
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/09/06
  */
 //@Configuration

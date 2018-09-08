@@ -1,7 +1,6 @@
 package com.tazine.evo.crontab.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
@@ -13,7 +12,9 @@ import java.util.Date;
 import java.util.concurrent.ScheduledFuture;
 
 /**
- * @author jiaer.ly
+ * DynamicTask
+ *
+ * @author frank
  * @date 2018/09/05
  */
 @RestController
@@ -31,15 +32,15 @@ public class DynamicTask {
     //}
 
     @RequestMapping("/startCron")
-    public String startCron(){
+    public String startCron() {
         future = threadPoolTaskScheduler.schedule(new MyRunnable(), new CronTrigger("0/5 * * * * *"));
         System.out.println("start a new cronjob");
         return "startCron";
     }
 
     @RequestMapping("/stopCron")
-    public String stopCron(){
-        if (null != future){
+    public String stopCron() {
+        if (null != future) {
             future.cancel(true);
         }
         System.out.println("stop cron success");
@@ -47,7 +48,7 @@ public class DynamicTask {
     }
 
     @Async
-    public void testAsync(){
+    public void testAsync() {
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -55,7 +56,7 @@ public class DynamicTask {
         }
     }
 
-    private class MyRunnable implements Runnable{
+    private class MyRunnable implements Runnable {
         @Override
         public void run() {
             System.out.println("UserDefined task run, " + new Date() + " -- " + Thread.currentThread().getName());

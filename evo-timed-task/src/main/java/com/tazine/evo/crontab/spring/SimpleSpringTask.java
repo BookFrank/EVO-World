@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 /**
  * 简单 Spring Task 定时任务
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/09/05
  */
 //@Configuration
