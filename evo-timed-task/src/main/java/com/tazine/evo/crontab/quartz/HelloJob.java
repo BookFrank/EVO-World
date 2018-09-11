@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 任务类
+ * Quartz 任务
  *
  * @author frank
  * @date 2018/09/07
