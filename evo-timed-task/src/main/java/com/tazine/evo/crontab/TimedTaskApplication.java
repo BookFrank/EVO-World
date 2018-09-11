@@ -20,7 +20,7 @@ public class TimedTaskApplication {
         ApplicationContext context = new SpringApplicationBuilder(TimedTaskApplication.class)
             .run(args);
         for (String s : context.getBeanDefinitionNames()){
-            System.out.println(s + " -- " + context.getBean(s).getClass().getName());
+            //System.out.println(s + " -- " + context.getBean(s).getClass().getName());
         }
     }
 }
