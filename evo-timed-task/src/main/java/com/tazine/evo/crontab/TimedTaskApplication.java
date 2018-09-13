@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * 应用启动类
+ * 定时任务实践应用启动类
  *
  * @author frank
  * @date 2018/09/05
