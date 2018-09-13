@@ -17,7 +17,7 @@
 	<packaging>jar</packaging>
 
 	<name>evo-springboot-redis</name>
-	<description>Demo project for Spring Boot</description>
+	<description>SpringBoot与Redis整合实践</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
