@@ -1,4 +1,4 @@
-package com.tazine.evo.guava.evoguavaall;
+package com.tazine.evo.guava;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
