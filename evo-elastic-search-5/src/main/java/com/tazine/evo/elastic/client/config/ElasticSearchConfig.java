@@ -56,10 +56,12 @@ public class ElasticSearchConfig implements FactoryBean<TransportClient>, Initia
     }
 
     protected void buildClient() {
-        System.out.println(clusterName + clusterNodes);
+        System.err.println(clusterName + clusterNodes);
         try {
+            // 基于 XPACK 的 TCP 客户端
             PreBuiltXPackTransportClient preBuiltXPackTransportClient = new PreBuiltXPackTransportClient(settings());
             if (!"".equals(clusterNodes)) {
+                // 节点用,号隔开，端口号用:隔开
                 for (String nodes : clusterNodes.split(",")) {
                     String inetSocket[] = nodes.split(":");
                     String address = inetSocket[0];
