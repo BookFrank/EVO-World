@@ -18,7 +18,7 @@ public class TestController {
 
     @RequestMapping("/sync")
     public String syncTest() {
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 101; i++) {
             asyncInstance.syncRun(i);
             System.out.println(i + " 已开始执行");
         }
@@ -27,7 +27,7 @@ public class TestController {
 
     @RequestMapping("/async")
     public String asyncTest() {
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 101; i++) {
             asyncInstance.asyncRun(i);
             System.out.println(i + " 已开始执行");
         }
