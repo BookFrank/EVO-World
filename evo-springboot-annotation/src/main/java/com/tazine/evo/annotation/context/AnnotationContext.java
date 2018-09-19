@@ -1,7 +1,6 @@
 package com.tazine.evo.annotation.context;
 
 import com.tazine.evo.annotation.EvoSpringbootAnnotationApplication;
-import com.tazine.evo.noscan.NoScanService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -17,7 +16,14 @@ public class AnnotationContext {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
             EvoSpringbootAnnotationApplication.class);
 
-        NoScanService noScanService = context.getBean(NoScanService.class);
-        noScanService.test();
+        // 测试 Bean 的 scope
+        //for (int i = 0; i < 10; i++) {
+        //    ScopeService scopeService = (ScopeService)context.getBean("scopeService");
+        //    scopeService.test();
+        //}
+
+        // 测试加载了哪些 Bean
+        //NoScanService noScanService = context.getBean(NoScanService.class);
+        //noScanService.test();
     }
 }
