@@ -29,4 +29,17 @@ public class AnnotationContext {
         //NoScanService noScanService = context.getBean(NoScanService.class);
         //noScanService.test();
     }
+
+    private static void app(String[] args){
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+
+        // 先设置活动Profile，再注册 Bean 配置类，然后刷新容器
+        context.getEnvironment().setActiveProfiles();
+        context.register(EvoSpringbootAnnotationApplication.class);
+        context.refresh();
+
+        context.close();
+
+        System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
+    }
 }
