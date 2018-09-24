@@ -1,4 +1,4 @@
-package com.tazine.evo.dubbo.evospringbootdubbo;
+package com.tazine.evo.dubbo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

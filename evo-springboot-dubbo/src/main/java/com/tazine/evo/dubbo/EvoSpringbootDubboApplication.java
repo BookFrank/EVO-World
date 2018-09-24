@@ -1,4 +1,4 @@
-package com.tazine.evo.dubbo.evospringbootdubbo;
+package com.tazine.evo.dubbo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
