@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan("com.tazine.evo")
 @SpringBootApplication
-public class EvoSpringbootAnnotationApplication {
+public class EvoSpringBootAnnotationApplication {
 
     public static void main(String[] args) {
         //start1(args);
@@ -23,21 +23,21 @@ public class EvoSpringbootAnnotationApplication {
     }
 
     /**
-     * 基于 SpringApplication 的静态应用启动
+     * 基于 SpringApplication 的静态run方法的应用启动
      *
      * @param args 命令行参数
      */
     private static void start1(String[] args) {
-        SpringApplication.run(EvoSpringbootAnnotationApplication.class, args);
+        SpringApplication.run(EvoSpringBootAnnotationApplication.class, args);
     }
 
     /**
-     * 基于 SpringApplication 的静态应用启动
+     * 基于 SpringApplicationBuild 实例run方法的应用启动
      *
      * @param args 命令行参数
      */
     private static void start2(String[] args) {
-        ApplicationContext context = new SpringApplicationBuilder(EvoSpringbootAnnotationApplication.class)
+        ApplicationContext context = new SpringApplicationBuilder(EvoSpringBootAnnotationApplication.class)
             .profiles("dev")
             .run(args);
     }

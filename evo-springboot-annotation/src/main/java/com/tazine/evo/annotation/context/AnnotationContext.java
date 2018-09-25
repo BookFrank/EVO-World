@@ -1,6 +1,6 @@
 package com.tazine.evo.annotation.context;
 
-import com.tazine.evo.annotation.EvoSpringbootAnnotationApplication;
+import com.tazine.evo.annotation.EvoSpringBootAnnotationApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Arrays;
@@ -41,7 +41,7 @@ public class AnnotationContext {
         // 通过设定 Environment 的 ActiveProfiles 来设定当前 context 需要使用的配置环境
         context.getEnvironment().setActiveProfiles("dev");
         System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
-        context.register(EvoSpringbootAnnotationApplication.class);
+        context.register(EvoSpringBootAnnotationApplication.class);
         context.refresh();
 
         context.close();
