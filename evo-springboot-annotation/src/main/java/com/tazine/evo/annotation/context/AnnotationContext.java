@@ -14,11 +14,14 @@ import java.util.Arrays;
 public class AnnotationContext {
 
     public static void main(String[] args) {
-        // AnnotationConfigApplicationContext 作为 Spring 容器，接受输入一个配置类作为参数启动容器
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-            EvoSpringbootAnnotationApplication.class);
 
-        System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
+        app(args);
+
+        // AnnotationConfigApplicationContext 作为 Spring 容器，接受输入一个配置类作为参数启动容器
+        //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+        //    EvoSpringbootAnnotationApplication.class);
+
+        //System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         // 测试 Bean 的 scope
         //for (int i = 0; i < 10; i++) {
         //    ScopeService scopeService = (ScopeService)context.getBean("scopeService");
@@ -33,8 +36,11 @@ public class AnnotationContext {
     private static void app(String[] args){
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
+        System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         // 先设置活动Profile，再注册 Bean 配置类，然后刷新容器
-        context.getEnvironment().setActiveProfiles();
+        // 通过设定 Environment 的 ActiveProfiles 来设定当前 context 需要使用的配置环境
+        context.getEnvironment().setActiveProfiles("dev");
+        System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         context.register(EvoSpringbootAnnotationApplication.class);
         context.refresh();
 
