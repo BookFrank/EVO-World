@@ -1,4 +1,4 @@
-package com.tazine.evo.async.boot;
+package com.tazine.evo.async.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,6 @@ public class TestController {
     public String syncTest() {
         for (int i = 1; i < 101; i++) {
             asyncInstance.syncRun(i);
-            System.out.println(i + " 已开始执行");
         }
         return "Hello Sync";
     }
@@ -28,8 +27,8 @@ public class TestController {
     @RequestMapping("/async")
     public String asyncTest() {
         for (int i = 1; i < 101; i++) {
+            System.out.println(Thread.currentThread().getName() + " 开始执行任务：" + i);
             asyncInstance.asyncRun(i);
-            System.out.println(i + " 已开始执行");
         }
         return "Hello Async";
     }

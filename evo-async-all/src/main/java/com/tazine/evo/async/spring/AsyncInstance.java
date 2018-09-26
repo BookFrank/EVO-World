@@ -1,4 +1,4 @@
-package com.tazine.evo.async.boot;
+package com.tazine.evo.async.spring;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -18,13 +18,13 @@ public class AsyncInstance {
         System.out.println(Thread.currentThread().getName() + " -- " + i);
     }
 
-    @Async
+    @Async("task-pool-1")
     public void asyncRun(int i){
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + " -- " + i);
+        System.out.println(Thread.currentThread().getName() + " -- " + i + " 号任务执行完毕");
     }
 }
