@@ -1,6 +1,7 @@
 package com.tazine.evo.annotation.context;
 
 import com.tazine.evo.annotation.EvoSpringBootAnnotationApplication;
+import com.tazine.evo.annotation.aware.AwareService;
 import com.tazine.evo.annotation.event.DemoEventPublisher;
 import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -17,10 +18,10 @@ public class AnnotationContext {
 
     public static void main(String[] args) {
 
-        //app(args);
+        app(args);
 
         // 测试 Application Event
-        app1(args);
+        //app1(args);
 
         // AnnotationConfigApplicationContext 作为 Spring 容器，接受输入一个配置类作为参数启动容器
         //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
@@ -48,6 +49,9 @@ public class AnnotationContext {
         System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         context.register(EvoSpringBootAnnotationApplication.class);
         context.refresh();
+
+        AwareService awareService = context.getBean(AwareService.class);
+        awareService.outputResult();
 
         context.close();
 
