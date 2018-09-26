@@ -1,5 +1,6 @@
 package com.tazine.evo.annotation;
 
+import com.tazine.evo.annotation.conditional.ConditionConfiguration;
 import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -3,6 +3,8 @@ package com.tazine.evo.annotation.context;
 import com.tazine.evo.annotation.EvoSpringBootAnnotationApplication;
 import com.tazine.evo.annotation.aware.ContextAwareService;
 import com.tazine.evo.annotation.aware.ResourceAwareService;
+import com.tazine.evo.annotation.conditional.ConditionConfiguration;
+import com.tazine.evo.annotation.conditional.ListFileService;
 import com.tazine.evo.annotation.event.DemoEventPublisher;
 import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,10 +21,13 @@ public class AnnotationContext {
 
     public static void main(String[] args) {
 
-        app(args);
+        //app(args);
 
         // 测试 Application Event
         //app1(args);
+
+        // 测试 @Conditional 注解
+        app2(args);
 
         // AnnotationConfigApplicationContext 作为 Spring 容器，接受输入一个配置类作为参数启动容器
         //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
@@ -67,6 +72,16 @@ public class AnnotationContext {
         DemoEventPublisher publisher = context.getBean(DemoEventPublisher.class);
 
         publisher.publish("Hello application event");
+
+        context.close();
+    }
+
+    private static void app2(String[] args){
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConditionConfiguration.class);
+
+        ListFileService listService = context.getBean(ListFileService.class);
+
+        System.out.println(context.getEnvironment().getProperty("os.name") + " 下的列表命令为：" + listService.showList());
 
         context.close();
     }
