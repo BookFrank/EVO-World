@@ -16,7 +16,7 @@ import java.io.IOException;
  * @date 2018/09/26
  */
 @Service
-public class AwareService implements BeanNameAware, ResourceLoaderAware {
+public class ResourceAwareService implements BeanNameAware, ResourceLoaderAware {
 
     private String beanName;
     private ResourceLoader loader;

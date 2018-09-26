@@ -1,7 +1,8 @@
 package com.tazine.evo.annotation.context;
 
 import com.tazine.evo.annotation.EvoSpringBootAnnotationApplication;
-import com.tazine.evo.annotation.aware.AwareService;
+import com.tazine.evo.annotation.aware.ContextAwareService;
+import com.tazine.evo.annotation.aware.ResourceAwareService;
 import com.tazine.evo.annotation.event.DemoEventPublisher;
 import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -50,8 +51,10 @@ public class AnnotationContext {
         context.register(EvoSpringBootAnnotationApplication.class);
         context.refresh();
 
-        AwareService awareService = context.getBean(AwareService.class);
-        awareService.outputResult();
+        ResourceAwareService resourceAwareService = context.getBean(ResourceAwareService.class);
+        resourceAwareService.outputResult();
+        ContextAwareService contextAwareService = context.getBean(ContextAwareService.class);
+        contextAwareService.output();
 
         context.close();
 
