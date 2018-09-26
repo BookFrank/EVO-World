@@ -2,11 +2,13 @@ package com.tazine.evo.annotation;
 
 import com.tazine.evo.annotation.conditional.ConditionConfiguration;
 import com.tazine.evo.annotation.event.EventConfiguration;
+import com.tazine.evo.noscan.NoScanConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 /**
  * SpringBoot 各类注解学习启动类
@@ -14,7 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
  * @author frank
  * @date 2018/09/15
  */
-@ComponentScan("com.tazine.evo")
+@ComponentScan("com.tazine.evo.annotation")
+@Import(NoScanConfiguration.class)
 @SpringBootApplication
 public class EvoSpringBootAnnotationApplication {
 

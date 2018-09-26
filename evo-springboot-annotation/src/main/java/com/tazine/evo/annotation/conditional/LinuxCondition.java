@@ -12,6 +12,13 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
  */
 public class LinuxCondition implements Condition {
 
+    /**
+     * matches
+     *
+     * @param context  context
+     * @param metadata 获得当前配置类上的注解
+     * @return
+     */
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
         System.err.println("LinuxCondition: " + context.getEnvironment().getProperty("os.name"));
