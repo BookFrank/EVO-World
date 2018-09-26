@@ -1,5 +1,6 @@
 package com.tazine.evo.annotation;
 
+import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -18,8 +19,10 @@ public class EvoSpringBootAnnotationApplication {
 
     public static void main(String[] args) {
         //start1(args);
+        //EvoSpringBootAnnotationApplication.class
+        //start2(args);
 
-        start2(args);
+        start1(args, EvoSpringBootAnnotationApplication.class);
     }
 
     /**
@@ -27,8 +30,8 @@ public class EvoSpringBootAnnotationApplication {
      *
      * @param args 命令行参数
      */
-    private static void start1(String[] args) {
-        SpringApplication.run(EvoSpringBootAnnotationApplication.class, args);
+    private static void start1(String[] args, Class clz) {
+        SpringApplication.run(clz, args);
     }
 
     /**
