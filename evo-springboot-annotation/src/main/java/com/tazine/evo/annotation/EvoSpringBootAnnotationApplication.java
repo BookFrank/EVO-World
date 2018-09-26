@@ -22,11 +22,13 @@ import org.springframework.context.annotation.Import;
 public class EvoSpringBootAnnotationApplication {
 
     public static void main(String[] args) {
-        //start1(args);
-        //EvoSpringBootAnnotationApplication.class
-        //start2(args);
 
         start1(args, EvoSpringBootAnnotationApplication.class);
+
+
+        //start2(args);
+
+        //start3(args);
     }
 
     /**
@@ -48,4 +50,11 @@ public class EvoSpringBootAnnotationApplication {
             .profiles("dev")
             .run(args);
     }
+
+    private static void start3(String[] args) {
+        SpringApplication app = new SpringApplication(EvoSpringBootAnnotationApplication.class);
+        app.setBanner(null);
+        app.run(args);
+    }
+
 }
