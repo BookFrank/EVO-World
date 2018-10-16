@@ -41,8 +41,15 @@ public class TaskExecutorConfiguration {
         executor.setQueueCapacity(queueCapacity);
         executor.setThreadNamePrefix("tazine-exec-");
 
-        // CALLER_RUNS：当pool达到max size的时候，不在新线程中执行任务，而是有调用者所在的线程来执行
+        // CALLER_RUNS：当pool达到max size的时候，不在新线程中执行任务，而是有调用者所在的线程来执行，这个策略重试添加当前的任务，他会自动重复调用 execute() 方法，直到成功
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        // DiscardOldestPolicy：对拒绝任务不抛弃，而是抛弃队列里面等待最久的一个线程，然后把拒绝任务加到队列。
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardOldestPolicy());
+        // DiscardPolicy：对拒绝任务直接无声抛弃，没有异常信息。
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
+        // AbortPolicy：对拒绝任务抛弃处理，并且抛出异常。
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
+
         executor.initialize();
         return executor;
     }
