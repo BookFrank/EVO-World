@@ -7,6 +7,10 @@
     <groupId>com.tazine.evo</groupId>
     <artifactId>EVO-World</artifactId>
     <version>1.0.0</version>
+    <modules>
+        <module>evo-maven-shade</module>
+        <module>evo-test-only</module>
+    </modules>
 
     <name>EVO-World</name>
     <packaging>pom</packaging>
@@ -119,6 +123,11 @@
             </dependency>
 
             <!-- 内部依赖管理 -->
+            <dependency>
+                <groupId>com.tazine.evo</groupId>
+                <artifactId>evo-maven-shade</artifactId>
+                <version>1.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

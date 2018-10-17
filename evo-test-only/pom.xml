@@ -7,10 +7,8 @@
 		<groupId>com.tazine.evo</groupId>
 		<artifactId>EVO-World</artifactId>
 		<version>1.0.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.tazine.evo.test</groupId>
 	<artifactId>evo-test-only</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
@@ -32,7 +30,7 @@
 			<artifactId>spring-boot-dependencies</artifactId>
 			<version>${springboot.version}</version>
 			<type>pom</type>
-			<scope>import</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,11 +45,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.projectreactor</groupId>-->
+			<!--<artifactId>reactor-test</artifactId>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
 
 		<!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-io/commons-io &ndash;&gt;-->
 		<!--<dependency>-->
@@ -67,38 +65,36 @@
 		<!--</dependency>-->
 
 		<dependency>
-			<groupId>com.jiaer</groupId>
-			<artifactId>evo-simp-test</artifactId>
-			<version>1.0.0</version>
+			<groupId>com.tazine.evo</groupId>
+			<artifactId>evo-maven-shade</artifactId>
+			<!--<version>1.0.0</version>-->
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<archive>
-						<manifest>
-							<mainClass></mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-
-
+	<!--<build>-->
+		<!--<plugins>-->
+			<!--<plugin>-->
+				<!--<artifactId>maven-assembly-plugin</artifactId>-->
+				<!--<configuration>-->
+					<!--<descriptorRefs>-->
+						<!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+					<!--</descriptorRefs>-->
+					<!--<archive>-->
+						<!--<manifest>-->
+							<!--<mainClass></mainClass>-->
+						<!--</manifest>-->
+					<!--</archive>-->
+				<!--</configuration>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>make-assembly</id>-->
+						<!--<phase>package</phase>-->
+						<!--<goals>-->
+							<!--<goal>single</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+		<!--</plugins>-->
+	<!--</build>-->
 </project>

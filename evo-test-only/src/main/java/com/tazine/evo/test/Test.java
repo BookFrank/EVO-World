@@ -1,10 +1,12 @@
 package com.tazine.evo.test;
 
+import com.jiaer.common.collect.Maps;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author jiaer.ly
@@ -13,7 +15,13 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        URL areaUrl = com.jiaer.Test.class.getClassLoader().getResource("area.csv");
+        Map<String,String> map = Maps.newHashMap();
+        map.put("book", "frank");
+        System.out.println(map);
+    }
+
+    private void test(){
+        URL areaUrl = Test.class.getClassLoader().getResource("area.csv");
         System.out.println(areaUrl.getFile());
         System.out.println(areaUrl.getPath());
         try {
