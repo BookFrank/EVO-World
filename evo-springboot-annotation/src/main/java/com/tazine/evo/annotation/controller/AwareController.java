@@ -1,5 +1,6 @@
 package com.tazine.evo.annotation.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.tazine.evo.annotation.aware.ContextAwareService;
 import com.tazine.evo.annotation.aware.ResourceAwareService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class AwareController {
 
     @RequestMapping("/ctx")
     public String ctx() {
+        System.out.println(JSON.toJSONString(context.getEnvironment()));
         String name = context.getEnvironment().getProperty("spring.application.name");
         return name;
     }
