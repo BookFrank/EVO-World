@@ -10,6 +10,7 @@
     <modules>
         <module>evo-maven-shade</module>
         <module>evo-test-only</module>
+        <module>evo-neo4j</module>
     </modules>
 
     <name>EVO-World</name>
