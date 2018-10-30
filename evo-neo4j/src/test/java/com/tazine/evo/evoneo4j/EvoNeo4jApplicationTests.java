@@ -1,4 +1,4 @@
-package com.tazine.evo.evoneo4j;
+package com.tazine.evo.neo4j;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

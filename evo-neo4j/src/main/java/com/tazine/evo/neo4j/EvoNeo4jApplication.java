@@ -1,4 +1,4 @@
-package com.tazine.evo.evoneo4j;
+package com.tazine.evo.neo4j;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
