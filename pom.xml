@@ -11,6 +11,7 @@
         <module>evo-maven-shade</module>
         <module>evo-test-only</module>
         <module>evo-neo4j</module>
+        <module>evo-infrastructure</module>
     </modules>
 
     <name>EVO-World</name>
