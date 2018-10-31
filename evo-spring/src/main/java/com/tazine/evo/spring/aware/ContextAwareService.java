@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
 /**
- * ContextAwareService，实现 ApplicationContextAware 可以获得Spring容器的所有服务
+ * ContextAwareService，实现ApplicationContextAware 可以获得Spring容器的所有服务
  *
  * @author frank
  * @date 2018/09/26
@@ -19,7 +19,7 @@ public class ContextAwareService implements ApplicationContextAware {
 
     private ApplicationContext context;
 
-    @Override
+//    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.context = applicationContext;
     }

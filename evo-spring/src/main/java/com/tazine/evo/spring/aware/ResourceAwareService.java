@@ -21,12 +21,12 @@ public class ResourceAwareService implements BeanNameAware, ResourceLoaderAware 
     private String beanName;
     private ResourceLoader loader;
 
-    @Override
+//    @Override
     public void setBeanName(String name) {
         this.beanName = name;
     }
 
-    @Override
+//    @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.loader = resourceLoader;
     }
