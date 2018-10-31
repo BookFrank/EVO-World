@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Spring 各类接口与特殊类
+ * Spring 各类接口与特性实践
  *
  * @author frank
  * @date 2018/10/31
