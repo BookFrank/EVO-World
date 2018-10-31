@@ -12,7 +12,7 @@
     <artifactId>evo-infrastructure</artifactId>
 
     <name>evo-infrastructure</name>
-    <description>EVO-自定义SpringBoot包</description>
+    <description>EVO-自定义SpringBoot Starter</description>
     <url>http://www.example.com</url>
 
     <properties>
