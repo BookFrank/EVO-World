@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
+ * HelloBean
+ *
  * @author frank
  * @date 2018/10/31
  */
