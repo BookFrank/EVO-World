@@ -61,6 +61,19 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Netty相关依赖 -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.19.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>SpringBoot-Netty</groupId>
+			<artifactId>SpringBoot-Netty</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
