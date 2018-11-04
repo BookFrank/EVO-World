@@ -13,7 +13,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @author frank
  * @date 2017/10/31
  */
-public class TimeServer {
+public class NettyTimeServer {
 
     public void bind(int port){
 
