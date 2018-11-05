@@ -1,33 +1,51 @@
 package com.tazine.evo.socket.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * 基于 Netty 的 NIO 时间服务器
  *
  * @author frank
- * @date 2017/10/31
+ * @date 2018/10/31
  */
 public class NettyTimeServer {
+
+    /**
+     * 专门用于网络事件的处理，就是 Reactor 线程组；
+     * 处理所有注册到本线程多路复用器 Selector 上的 Channel
+     */
+    private EventLoopGroup bossGroup = new NioEventLoopGroup();
+
+    /**
+     * 用于处理 SocketChannel 的网络读写
+     */
+    private EventLoopGroup workerGroup = new NioEventLoopGroup();
 
     public void bind(int port){
 
         // 服务端为什么需要线程组？
         // 配置服务端的 NIO 线程组
-        EventLoopGroup bossGroup = new NioEventLoopGroup();
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
-                    .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 1024)
-                    .childHandler(new EvoChannelHandler());
+                .channel(NioServerSocketChannel.class)
+
+                //服务端可连接队列数,对应TCP/IP协议listen函数中backlog参数
+                .option(ChannelOption.SO_BACKLOG, 1024)
+
+                //设置TCP长连接,一般如果两个小时内没有数据的通信时,TCP会自动发送一个活动探测数据报文
+                .childOption(ChannelOption.SO_KEEPALIVE, true)
+
+                //将小的数据包包装成更大的帧进行传送，提高网络的负载,即TCP延迟传输
+                .childOption(ChannelOption.TCP_NODELAY, true)
+
+                // 服务端收到消息以后做什么，通过 Handler 来体现
+                .childHandler(new ServerChannelInitializer());
 
             // 绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();
@@ -40,7 +58,21 @@ public class NettyTimeServer {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
-
     }
 
+    /**
+     * I/O 事件的处理类，类似于 Reactor 模式中的 handler；
+     * 主要用于处理网络 I/O 事件，例如记录日志、对消息进行编解码等
+     */
+    private class TimeServerChannelInitializer extends ChannelInitializer<SocketChannel>{
+        @Override
+        protected void initChannel(SocketChannel socketChannel) throws Exception {
+            socketChannel.pipeline().addLast(new ServerChannelHandler());
+        }
+    }
+
+    public static void main(String[] args) {
+        int port = 8080;
+        new NettyTimeServer().bind(port);
+    }
 }
