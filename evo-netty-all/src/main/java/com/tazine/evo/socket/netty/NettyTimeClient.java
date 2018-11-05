@@ -28,14 +28,14 @@ public class NettyTimeClient {
 
             b.group(group)
                 .channel(NioSocketChannel.class)
-                .handler(new TimeClientChannelInitializer());
+                .handler(new ClientChannelInitializer());
 
             // 连接服务端
             Channel ch = b.connect(host, port).sync().channel();
 
             // 控制台输入
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            for (; ; ) {
+            while (true) {
                 String line = in.readLine();
                 if (line == null) {
                     continue;

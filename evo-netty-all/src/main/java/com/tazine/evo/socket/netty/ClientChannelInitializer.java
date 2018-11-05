@@ -25,6 +25,6 @@ public class ClientChannelInitializer extends ChannelInitializer<SocketChannel> 
         pipeline.addLast("encoder", new StringEncoder());
 
         // 自己的逻辑 Handler，用于写自己的处理逻辑
-        pipeline.addLast(new ServerChannelHandler());
+        pipeline.addLast(new ClientChannelHandler());
     }
 }
