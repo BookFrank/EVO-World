@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author frank
  * @date 2018/11/07
  */
-@WebFilter(urlPatterns = "/b/*")
+@WebFilter(urlPatterns = "/*")
 public class EvoBootFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)

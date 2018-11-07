@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @author frank
  * @date 2018/10/31
  */
-@ServletComponentScan
+//@ServletComponentScan
 @SpringBootApplication
 public class EvoSpringApplication {
 
