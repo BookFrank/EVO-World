@@ -1,4 +1,4 @@
-package com.tazine.evo.boot;
+package com.tazine.evo.boot.validation;
 
 import com.tazine.evo.boot.entity.HttpResult;
 import com.tazine.evo.boot.entity.enums.HttpAnswerCode;

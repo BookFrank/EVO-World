@@ -1,7 +1,6 @@
 package com.tazine.evo.boot.validation;
 
 import com.alibaba.fastjson.JSON;
-import com.tazine.evo.boot.RestResponseBuilder;
 import com.tazine.evo.boot.entity.HttpResult;
 import com.tazine.evo.boot.entity.enums.HttpAnswerCode;
 import org.slf4j.Logger;
