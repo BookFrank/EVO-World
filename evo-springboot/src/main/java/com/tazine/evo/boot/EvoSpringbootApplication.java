@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.evospringboot;
+package com.tazine.evo.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

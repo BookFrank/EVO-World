@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.evospringboot;
+package com.tazine.evo.boot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
