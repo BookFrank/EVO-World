@@ -15,6 +15,8 @@ public class EvoBootFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
         throws IOException, ServletException {
-        System.out.println("经过 EvoBootFilter");
+        System.err.println("进入 EvoBootFilter");
+        filterChain.doFilter(servletRequest,servletResponse);
+        System.err.println("退出 EvoBootFilter");
     }
 }

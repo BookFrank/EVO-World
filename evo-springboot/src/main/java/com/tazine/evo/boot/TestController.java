@@ -21,4 +21,10 @@ public class TestController {
     public String brave(){
         return "brave world";
     }
+
+    @RequestMapping("/hi")
+    public String hello(){
+        System.out.println("hello world");
+        return "hi";
+    }
 }
