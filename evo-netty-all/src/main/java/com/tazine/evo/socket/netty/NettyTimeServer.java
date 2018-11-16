@@ -16,12 +16,13 @@ public class NettyTimeServer {
 
     /**
      * 专门用于网络事件的处理，就是 Reactor 线程组；
-     * 处理所有注册到本线程多路复用器 Selector 上的 Channel
+     * 处理所有注册到本线程多路复用器 Selector 上的 Channel，调度和执行哭护短的接入
+     * 服务端用于监听和接收客户端连接的 Reactor 线程组
      */
     private EventLoopGroup bossGroup = new NioEventLoopGroup();
 
     /**
-     * 用于处理 SocketChannel 的网络读写
+     * 用于处理 SocketChannel 的网络读写，处理 /O 读写的 Reactor 线程组
      */
     private EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -33,6 +34,7 @@ public class NettyTimeServer {
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
+                // 绑定服务端 Channel，作为 NIO 服务端，JDK 中需要创建 ServerSocketChannel
                 .channel(NioServerSocketChannel.class)
 
                 //服务端可连接队列数,对应TCP/IP协议listen函数中backlog参数
