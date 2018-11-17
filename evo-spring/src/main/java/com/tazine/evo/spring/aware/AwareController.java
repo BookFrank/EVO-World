@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Spring 中的 Aware 感知
+ * Spring 中的 Aware 感知使用
  *
  * @author frank
  * @date 2018/10/17
