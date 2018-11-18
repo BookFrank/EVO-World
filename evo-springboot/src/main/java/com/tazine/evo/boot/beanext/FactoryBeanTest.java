@@ -4,7 +4,7 @@ package com.tazine.evo.boot.beanext;
  * FactoryBeanTest
  *
  * @author frank
- * @since 1.0.0
+ * @date 2018/10/31
  */
 public class FactoryBeanTest {
 }

@@ -17,6 +17,7 @@ public class HelloBean implements InitializingBean {
     @Autowired
     private ApplicationContext context;
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         System.err.println("InitializingBean 统计到当前 Bean 个数为：" + context.getBeanDefinitionCount());
     }

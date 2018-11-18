@@ -14,6 +14,7 @@ import javax.annotation.PostConstruct;
 @Component
 public class BookBean implements InitializingBean {
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         System.err.println("BookBean 正在进行初始化");
     }
