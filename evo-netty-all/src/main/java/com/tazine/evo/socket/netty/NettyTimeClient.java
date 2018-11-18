@@ -28,7 +28,7 @@ public class NettyTimeClient {
 
             b.group(group)
                 .channel(NioSocketChannel.class)
-                .handler(new ClientChannelInitializer());
+                .handler(new ClientChannelChain());
 
             // 连接服务端
             Channel ch = b.connect(host, port).sync().channel();
