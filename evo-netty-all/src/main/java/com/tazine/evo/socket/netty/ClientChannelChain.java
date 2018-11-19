@@ -9,10 +9,12 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 /**
+ * ChildHandler 处理链
+ *
  * @author frank
  * @date 2018/11/05
  */
-public class ClientChannelInitializer extends ChannelInitializer<SocketChannel> {
+public class ClientChannelChain extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();

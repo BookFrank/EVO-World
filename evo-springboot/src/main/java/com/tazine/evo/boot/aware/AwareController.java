@@ -1,4 +1,4 @@
-package com.tazine.evo.spring.aware;
+package com.tazine.evo.boot.aware;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Spring 中的 Aware 感知使用
+ * Spring 中的 Aware 感知
  *
  * @author frank
  * @date 2018/10/17
