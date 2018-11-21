@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.List;
 
 /**
+ * FileReader
+ *
  * @author frank
  * @date 2018/10/11
  */
