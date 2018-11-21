@@ -16,7 +16,7 @@
 	<packaging>jar</packaging>
 
 	<name>evo-springboot-annotation</name>
-	<description>Demo project for Spring Boot</description>
+	<description>SpringBoot 注解相关</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
