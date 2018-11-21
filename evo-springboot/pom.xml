@@ -5,11 +5,11 @@
 
 	<groupId>com.tazine.evo.boot</groupId>
 	<artifactId>evo-springboot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>evo-springboot</name>
-	<description>Demo project for Spring Boot</description>
+	<description>SpringBoot基本使用</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
