@@ -12,6 +12,7 @@
         <module>evo-test-only</module>
         <module>evo-neo4j</module>
         <module>evo-infrastructure</module>
+        <module>evo-springboot-nonweb</module>
     </modules>
 
     <name>EVO-World</name>
