@@ -5,11 +5,11 @@
 
 	<groupId>com.tazine.evo.vue</groupId>
 	<artifactId>evo-springboot-vue</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>evo-springboot-vue</name>
-	<description>Demo project for Spring Boot</description>
+	<description>SpringBoot Vue整合</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
