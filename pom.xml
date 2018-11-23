@@ -13,6 +13,7 @@
         <module>evo-neo4j</module>
         <module>evo-infrastructure</module>
         <module>evo-springboot-nonweb</module>
+        <module>evo-flink</module>
     </modules>
 
     <name>EVO-World</name>
