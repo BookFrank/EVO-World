@@ -1,6 +1,9 @@
 management:
   server:
     port: 7002
+  endpoints:
+    enabled-by-default: true
+
 #  endpoints:
 #    web:
 #      exposure:
