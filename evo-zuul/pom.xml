@@ -5,11 +5,11 @@
 
 	<groupId>com.tazine.evo</groupId>
 	<artifactId>evo-zuul</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>evo-zuul</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Zuul 网关学习</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
