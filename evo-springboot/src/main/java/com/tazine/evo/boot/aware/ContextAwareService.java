@@ -19,7 +19,7 @@ public class ContextAwareService implements ApplicationContextAware {
 
     private ApplicationContext context;
 
-//    @Override
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.context = applicationContext;
     }
