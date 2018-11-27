@@ -1,0 +1,7 @@
+# DataSource配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: jiaer.ly
+    driver-class-name: com.mysql.jdbc.Driver
