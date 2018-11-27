@@ -14,6 +14,7 @@
         <module>evo-infrastructure</module>
         <module>evo-springboot-nonweb</module>
         <module>evo-flink</module>
+        <module>evo-springboot-ehcache</module>
     </modules>
 
     <name>EVO-World</name>
