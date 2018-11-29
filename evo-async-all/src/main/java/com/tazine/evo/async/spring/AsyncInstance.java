@@ -21,7 +21,7 @@ public class AsyncInstance {
     @Async("task-pool-1")
     public void asyncRun(int i){
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
