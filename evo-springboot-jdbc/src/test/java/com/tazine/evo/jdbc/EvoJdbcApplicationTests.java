@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -63,6 +64,12 @@ public class EvoJdbcApplicationTests {
             conn = dataSource.getConnection();
             System.out.println(JSON.toJSONString(conn.getClientInfo()));
             System.out.println(conn.getMetaData().getDatabaseProductName());
+            Statement st = conn.createStatement();
+            String sql = "SELECT * FROM player";
+            ResultSet rt = st.executeQuery(sql);
+            while (rt.next()){
+                System.out.println(rt.getString("name"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
