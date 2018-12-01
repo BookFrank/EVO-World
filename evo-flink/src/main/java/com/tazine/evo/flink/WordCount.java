@@ -16,9 +16,7 @@ import scala.Tuple2;
 public class WordCount {
 
     public static void main(String[] args) {
-
-
-
+        
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         DataStream<String> text = env.fromElements(" To be, or not to be, that is the question",
