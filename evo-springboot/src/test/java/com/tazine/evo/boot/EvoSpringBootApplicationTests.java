@@ -1,6 +1,7 @@
 package com.tazine.evo.boot;
 
 import com.tazine.evo.boot.config.property.EvoProperties;
+import com.tazine.evo.boot.config.property.TazineProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ public class EvoSpringBootApplicationTests {
 
 	@Autowired
 	private EvoProperties evoProperties;
+
+	@Autowired
+	private TazineProperties tazineProperties;
 
 	@Test
 	public void contextLoads() {
@@ -30,5 +34,7 @@ public class EvoSpringBootApplicationTests {
 		System.out.println(evoProperties.getBignumber());
 		System.out.println(evoProperties.getTest1());
 		System.out.println(evoProperties.getTest2());
+		System.out.println();
+		System.out.println(tazineProperties.getEst());
 	}
 }
