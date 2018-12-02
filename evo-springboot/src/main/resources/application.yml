@@ -11,3 +11,13 @@ management:
   endpoint:
     health:
       show-details: always
+
+
+
+evo:
+  module: springboot
+  value: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  test1: ${random.int(10)}
+  test2: ${random.int[10,20]}
