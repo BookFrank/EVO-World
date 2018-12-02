@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * EvoProperties
  *
  * @author frank
- * @since 1.0.0
+ * @date 2018/12/01
  */
 @Data
 @ConfigurationProperties(prefix = "evo")
