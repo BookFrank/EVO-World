@@ -39,5 +39,6 @@ public class EvoSpringBootApplicationTests {
 		System.out.println(evoProperties.getTest2());
 		System.out.println();
 		System.out.println(tazineProperties.getEst());
+		tazineProperties.getEmployee().forEach(System.out::println);
 	}
 }
