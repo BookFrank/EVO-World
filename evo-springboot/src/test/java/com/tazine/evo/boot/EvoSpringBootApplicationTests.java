@@ -2,10 +2,12 @@ package com.tazine.evo.boot;
 
 import com.tazine.evo.boot.config.property.EvoProperties;
 import com.tazine.evo.boot.config.property.TazineProperties;
+import com.tazine.evo.boot.util.ContextUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Service;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -20,6 +22,9 @@ public class EvoSpringBootApplicationTests {
 
 	@Autowired
 	private TazineProperties tazineProperties;
+
+	@Autowired
+	private ContextUtil contextUtil;
 
 	@Test
 	public void contextLoads() {
@@ -40,5 +45,10 @@ public class EvoSpringBootApplicationTests {
 		System.out.println();
 		System.out.println(tazineProperties.getEst());
 		tazineProperties.getEmployee().forEach(System.out::println);
+	}
+
+	@Test
+	public void testCtx(){
+		ContextUtil.getBeanNamesForAnnotation(Service.class);
 	}
 }
