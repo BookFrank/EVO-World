@@ -1,4 +1,4 @@
-package com.tazine.evo.socket.netty;
+package com.tazine.evo.socket.netty.server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

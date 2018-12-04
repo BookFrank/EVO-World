@@ -1,4 +1,4 @@
-package com.tazine.evo.socket.netty;
+package com.tazine.evo.socket.netty.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -9,12 +9,12 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 /**
- * Netty Channel 初始化
+ * ChildHandler 处理链
  *
  * @author frank
  * @date 2018/11/05
  */
-public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> {
+public class ClientChannelChain extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
@@ -27,6 +27,6 @@ public class ServerChannelInitializer extends ChannelInitializer<SocketChannel> 
         pipeline.addLast("encoder", new StringEncoder());
 
         // 自己的逻辑 Handler，用于写自己的处理逻辑
-        pipeline.addLast(new ServerChannelHandler());
+        pipeline.addLast(new ClientChannelHandler());
     }
 }
