@@ -1,4 +1,4 @@
-package com.tazine.evo.file.prototuff;
+package com.tazine.evo.file.protostuff;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,11 +4,12 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * FileWriter
+ *
  * @author frank
  * @date 2018/11/21
  */
@@ -21,7 +22,7 @@ public class FileWriter {
 
             List<String> list = new ArrayList<>();
             // Commons-io 读取文件
-            for (int i = 0; i< 10; i++){
+            for (int i = 0; i < 10; i++) {
                 list.add("" + i);
             }
             FileUtils.writeLines(file, list);

@@ -11,3 +11,19 @@ management:
   endpoint:
     health:
       show-details: always
+
+
+
+evo:
+  module: springboot
+  value: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  test1: ${random.int(10)}
+  test2: ${random.int[10,20]}
+
+tazine:
+  est: 2016
+  employee[0]: 张三
+  employee[1]: 李四
+  employee[2]: 王五

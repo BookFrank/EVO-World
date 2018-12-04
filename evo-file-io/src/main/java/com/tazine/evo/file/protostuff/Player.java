@@ -1,4 +1,4 @@
-package com.tazine.evo.file.prototuff;
+package com.tazine.evo.file.protostuff;
 
 import lombok.Builder;
 import lombok.Data;
