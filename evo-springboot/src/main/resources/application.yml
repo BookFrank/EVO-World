@@ -12,6 +12,15 @@ management:
     health:
       show-details: always
 
+# access log 日志开关
+
+server:
+  tomcat:
+    access-log-enabled: true
+    #日志格式
+    access-log-pattern: %h %l %u %t "%r" %s %b %D
+    #日志输出目录，这里是设置为当前目录下
+    basedir: ./
 
 
 evo:
