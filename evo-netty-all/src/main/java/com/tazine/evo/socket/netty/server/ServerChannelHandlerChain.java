@@ -7,9 +7,11 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.timeout.IdleStateHandler;
 
 /**
- * ChannelHandler 职责链
+ * ServerChannelHandlerChain 职责链
+ * ChannelInitializer 用于初始化 ChannelPipeline，定义对channel的处理
  *
  * @author frank
  * @date 2018/11/16
@@ -22,7 +24,12 @@ public class ServerChannelHandlerChain extends ChannelInitializer<SocketChannel>
         // 以("\n")为结尾分割的解码器
         pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
 
+        // 空闲状态检查  间隔无消息,断开连接
+        pipeline.addLast("idleStateCheck", new IdleStateHandler(0, 0, 600));
+        //pipeline.addLast("idleCheckHandler", new IdleStateCheckHandler());
+
         // 字符串解码和编码
+        // 将比特流转换为默认编码的字符串，默认为 UTF-8
         pipeline.addLast("decoder", new StringDecoder());
         pipeline.addLast("encoder", new StringEncoder());
 
