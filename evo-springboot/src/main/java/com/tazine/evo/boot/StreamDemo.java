@@ -9,7 +9,7 @@ package com.tazine.evo.boot;
 public class StreamDemo {
 
     public static void main(String[] args) {
-        
+
 
     }
 
