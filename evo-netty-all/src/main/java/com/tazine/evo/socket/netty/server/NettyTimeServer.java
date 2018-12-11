@@ -47,7 +47,7 @@ public class NettyTimeServer {
                 .childOption(ChannelOption.TCP_NODELAY, true)
 
                 // 服务端收到消息以后做什么，通过 Handler 来体现
-                .childHandler(new ServerChannelInitializer());
+                .childHandler(new ServerChannelHandlerChain());
 
             // 绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();
