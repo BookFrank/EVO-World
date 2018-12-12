@@ -13,10 +13,10 @@ import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
 /**
- * Created by lina on 2018/12/12.
+ * EchoServer
  *
  * @author frank
- * @since 1.0.0
+ * @date 2018/12/12
  */
 public class EchoServer {
 

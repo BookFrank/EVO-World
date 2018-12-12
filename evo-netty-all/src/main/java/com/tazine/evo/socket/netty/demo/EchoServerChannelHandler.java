@@ -4,10 +4,10 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
- * Created by lina on 2018/12/12.
+ * EchoServerChannelHandler
  *
  * @author frank
- * @since 1.0.0
+ * @date 2018/12/12
  */
 public class EchoServerChannelHandler extends ChannelInboundHandlerAdapter {
 
