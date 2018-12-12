@@ -30,9 +30,9 @@ public class NettyTimeServer {
 
         // 服务端为什么需要线程组？
         // 配置服务端的 NIO 线程组
-
         try {
             ServerBootstrap b = new ServerBootstrap();
+
             b.group(bossGroup, workerGroup)
                 // 绑定服务端 Channel，作为 NIO 服务端，JDK 中需要创建 ServerSocketChannel
                 .channel(NioServerSocketChannel.class)

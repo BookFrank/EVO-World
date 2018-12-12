@@ -11,7 +11,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 
 /**
  * ServerChannelHandlerChain 职责链
- * ChannelInitializer 用于初始化 ChannelPipeline，定义对channel的处理
+ * ChannelInitializer 用于初始化 ChannelPipeline，定义对channel的处理，在初始化的时候设置管道里消息的处理者。
  *
  * @author frank
  * @date 2018/11/16
