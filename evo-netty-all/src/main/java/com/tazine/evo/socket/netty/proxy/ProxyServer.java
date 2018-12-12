@@ -1,6 +1,5 @@
 package com.tazine.evo.socket.netty.proxy;
 
-import com.tazine.evo.socket.netty.server.ServerChannelHandlerChain;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
@@ -11,7 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * 反向代理服务器
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/12/12
  */
 public class ProxyServer {

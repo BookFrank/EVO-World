@@ -1,6 +1,5 @@
 package com.tazine.evo.socket.netty.proxy;
 
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 
