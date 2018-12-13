@@ -80,6 +80,13 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.50</version>
 		</dependency>
+
+		<!-- Java Metric度量 -->
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.2.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
