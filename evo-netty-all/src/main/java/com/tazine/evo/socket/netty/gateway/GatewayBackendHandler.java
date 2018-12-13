@@ -1,8 +1,11 @@
 package com.tazine.evo.socket.netty.gateway;
 
-import io.netty.channel.*;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
+ * GatewayBackendHandler
+ *
  * @author frank
  * @date 2018/12/12
  */
@@ -29,6 +32,6 @@ public class GatewayBackendHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("真实服务器响应：" + (String)msg);
+        System.out.println("真实服务器响应：" + (String) msg);
     }
 }

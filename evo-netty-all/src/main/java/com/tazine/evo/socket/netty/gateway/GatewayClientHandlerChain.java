@@ -9,7 +9,9 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 /**
- * @author jiaer.ly
+ * GatewayClientHandlerChain
+ *
+ * @author frank
  * @date 2018/12/12
  */
 public class GatewayClientHandlerChain extends ChannelInitializer<SocketChannel> {
