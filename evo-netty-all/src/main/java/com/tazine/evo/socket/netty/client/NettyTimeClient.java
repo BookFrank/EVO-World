@@ -23,9 +23,7 @@ public class NettyTimeClient {
         EventLoopGroup group = new NioEventLoopGroup();
 
         try {
-
             Bootstrap b = new Bootstrap();
-
             b.group(group)
                 .channel(NioSocketChannel.class)
                 .handler(new ClientChannelChain());
