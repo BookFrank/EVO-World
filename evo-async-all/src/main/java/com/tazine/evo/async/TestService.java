@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author jiaer.ly
+ * @author frank
  * @date 2018/12/14
  */
 @Service
 public class TestService {
 
 
-    @Async
+    @Async("async-service")
     public void sleep(){
         System.out.println("ThreadName： " + Thread.currentThread().getName());
         try {
