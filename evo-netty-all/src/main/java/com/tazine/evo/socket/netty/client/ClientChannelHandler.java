@@ -10,6 +10,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @date 2018/11/05
  */
 public class ClientChannelHandler extends SimpleChannelInboundHandler<String> {
+
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String msg) throws Exception {
         System.out.println("Server say : " + msg);
