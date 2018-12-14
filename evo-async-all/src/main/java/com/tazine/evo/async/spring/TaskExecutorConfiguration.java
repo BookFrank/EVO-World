@@ -21,17 +21,17 @@ public class TaskExecutorConfiguration {
     /**
      * 核心线程数
      */
-    private int corePoolSize = 10;
+    private int corePoolSize = 1;
 
     /**
      * 最大线程数
      */
-    private int maxPoolSize = 20;
+    private int maxPoolSize = 2;
 
     /**
      * 队列长度
      */
-    private int queueCapacity = 100;
+    private int queueCapacity = 5;
 
     @Bean(name = "task-pool-1")
     public Executor asyncExecutor() {
