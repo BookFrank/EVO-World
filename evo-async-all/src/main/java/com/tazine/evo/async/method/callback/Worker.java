@@ -21,6 +21,7 @@ public class Worker {
                 System.out.println("Data received: " + data);
             }
         });
+        System.out.println("程序执行完成");
     }
 
     public static void main(String[] args) {
