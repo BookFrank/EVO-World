@@ -18,7 +18,7 @@ import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by lina on 2018/12/19.
+ * HeartBeatServer
  *
  * @author frank
  * @date 2018/12/11
@@ -46,7 +46,9 @@ public class HeartBeatServer {
                             ch.pipeline().addLast("decoder", new StringDecoder());
                             ch.pipeline().addLast("encoder", new StringEncoder());
                             ch.pipeline().addLast(new HeartBeatServerHandler());
-                        };
+                        }
+
+                        ;
 
                     }).option(ChannelOption.SO_BACKLOG, 128).childOption(ChannelOption.SO_KEEPALIVE, true);
             // 绑定端口，开始接收进来的连接
