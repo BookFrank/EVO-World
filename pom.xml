@@ -17,6 +17,7 @@
         <module>evo-springboot-ehcache</module>
         <module>evo-springboot-jdbc</module>
         <module>evo-springboot-1x</module>
+        <module>evo-springboot-swagger</module>
     </modules>
 
     <name>EVO-World</name>
