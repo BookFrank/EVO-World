@@ -54,7 +54,7 @@ public class NettyTimeClient {
 
     public static void main(String[] args) {
         //new NettyTimeClient().connect("127.0.0.1", 8080);
-        new NettyTimeClient().connect("127.0.0.1", 9090);
+        new NettyTimeClient().connect("127.0.0.1", 8888);
     }
 
     private class TimeClientChannelInitializer extends ChannelInitializer<SocketChannel> {

@@ -21,10 +21,10 @@ public class ClientChannelChain extends ChannelInitializer<SocketChannel> {
         ChannelPipeline pipeline = socketChannel.pipeline();
 
         // 以("\n")为结尾分割的解码器
-        pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
+        //pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
 
         // 字符串解码和编码
-        pipeline.addLast("decoder", new StringDecoder());
+        //pipeline.addLast("decoder", new StringDecoder());
         pipeline.addLast("encoder", new StringEncoder());
 
         // 自己的逻辑 Handler，用于写自己的处理逻辑

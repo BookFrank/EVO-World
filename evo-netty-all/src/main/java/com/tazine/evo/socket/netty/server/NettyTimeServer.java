@@ -74,7 +74,7 @@ public class NettyTimeServer {
     }
 
     public static void main(String[] args) {
-        int port = 8080;
+        int port = 8888;
         new NettyTimeServer().bind(port);
     }
 }
