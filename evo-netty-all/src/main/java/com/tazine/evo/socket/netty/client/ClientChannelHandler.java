@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
- * ClientChannelHandler
+ * TestClientHandler
  *
  * @author frank
  * @date 2018/11/05

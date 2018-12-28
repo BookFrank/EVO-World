@@ -7,7 +7,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import java.net.InetAddress;
 
 /**
- * ServerChannelHandler，是责任链模式中的处理者
+ * TestServerHandler，是责任链模式中的处理者
  * SimpleChannelInboundHandler 负责数据进入并在ChannelPipeline中按照从上至下的顺序查找调用对应的 InBoundHandler
  *
  * @author frank
