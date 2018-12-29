@@ -22,6 +22,13 @@ public class ZeroFileCopy {
         copyFileWithFileChannel(src, dest);
     }
 
+    /**
+     * 普通文件复制-需要额外借助一个临时的Buffer
+     *
+     * @param srcFileName  srcFileName
+     * @param destFileName destFileName
+     * @throws Exception e
+     */
     public static void copyFileWrite(String srcFileName, String destFileName) throws Exception {
         File srcFile = new File(srcFileName);
         File destFile = new File(destFileName);
@@ -30,7 +37,7 @@ public class ZeroFileCopy {
         FileWriter fileWriter = new FileWriter(destFile);
 
         // readLine 写出的会与普通复制不太一样
-        while (reader.ready()){
+        while (reader.ready()) {
             fileWriter.write(reader.readLine());
         }
         fileWriter.flush();
@@ -44,7 +51,7 @@ public class ZeroFileCopy {
         FileReader fileReader = new FileReader(srcFile);
         FileWriter fileWriter = new FileWriter(destFile);
 
-        while (fileReader.ready()){
+        while (fileReader.ready()) {
             fileWriter.write(fileReader.read());
         }
 
@@ -52,6 +59,13 @@ public class ZeroFileCopy {
         System.out.println("普通文件复制成功");
     }
 
+    /**
+     * NIO文件复制-不需额外借助Buffer，可实现零拷贝的文件复制。
+     *
+     * @param srcFileName  srcFileName
+     * @param destFileName destFileName
+     * @throws Exception e
+     */
     public static void copyFileWithFileChannel(String srcFileName, String destFileName) throws Exception {
         // 有了 FileChannel 后, 就可以直接将源文件的内容通过transferTo)方法直接拷贝到目的文件中, 而不需要额外借助一个临时 buffer, 避免了不必要的内存操作
         RandomAccessFile srcFile = new RandomAccessFile(srcFileName, "r");
