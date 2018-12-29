@@ -62,7 +62,7 @@ public class TestClient {
         protected void initChannel(SocketChannel socketChannel) throws Exception {
             ChannelPipeline pipeline = socketChannel.pipeline();
 
-            pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Unpooled.copiedBuffer("#".getBytes())));
+            //pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Unpooled.copiedBuffer("#".getBytes())));
             // initChannel时，设置为登录用的
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("decoder", new StringDecoder());

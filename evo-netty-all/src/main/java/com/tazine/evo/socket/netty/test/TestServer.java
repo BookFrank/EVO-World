@@ -75,7 +75,7 @@ public class TestServer {
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
             ChannelPipeline pipeline = socketChannel.pipeline();
-            pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Unpooled.copiedBuffer("#".getBytes())));
+            //pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Unpooled.copiedBuffer("#".getBytes())));
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("decoder", new StringDecoder());
             socketChannel.pipeline().addLast(new TestServerHandler());
