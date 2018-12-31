@@ -11,7 +11,6 @@ import com.google.common.base.Optional;
 public class GuavaOptionalTester {
 
     public static void main(String[] args) {
-
         // 不采用 Guava
         Integer a = null;
         Integer b = 10;
