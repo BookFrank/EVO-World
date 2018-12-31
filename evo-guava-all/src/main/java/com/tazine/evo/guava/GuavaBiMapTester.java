@@ -12,14 +12,13 @@ import com.google.common.collect.HashBiMap;
 public class GuavaBiMapTester {
 
     public static void main(String args[]){
-        BiMap<Integer, String> empIDNameMap = HashBiMap.create();
+        BiMap<Integer, String> playerMap = HashBiMap.create();
 
-        empIDNameMap.put(101, "Mahesh");
-        empIDNameMap.put(102, "Sohan");
-        empIDNameMap.put(new Integer(103), "Ramesh");
+        playerMap.put(24, "kobe");
+        playerMap.put(23, "james");
+        playerMap.put(new Integer(3), "iverson");
 
         //Emp Id of Employee "Mahesh"
-        System.out.println(empIDNameMap.inverse().get("Mahesh"));
+        System.out.println(playerMap.inverse().get("kobe"));
     }
-
 }
