@@ -12,6 +12,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 public class TestServerHandlerAdapter extends ChannelInboundHandlerAdapter {
 
     @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("TestServerHandlerAdapter Active");
+        super.channelActive(ctx);
+    }
+
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         String message = (String)msg;
         System.out.println("TestServerHandlerAdapter 收到 : " + message + message.length());

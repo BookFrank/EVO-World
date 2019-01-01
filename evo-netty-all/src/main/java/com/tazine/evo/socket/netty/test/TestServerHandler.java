@@ -40,6 +40,7 @@ public class TestServerHandler extends SimpleChannelInboundHandler<String> {
         }else {
             ctx.writeAndFlush(" Received your message#\n ");
         }
+        ctx.fireChannelRead(msg);
         // 响应客户端消息 必须加 \n 否则可能会出错
     }
 
