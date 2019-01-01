@@ -16,7 +16,7 @@
 	<packaging>jar</packaging>
 
 	<name>evo-api-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<description>API Gateway各种实践</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -97,6 +97,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
