@@ -80,7 +80,9 @@ public class TestServer {
             //pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("decoder", new StringDecoder());
-            socketChannel.pipeline().addLast(new TestServerHandler());
+            //socketChannel.pipeline().addLast(new TestServerHandler());
+            socketChannel.pipeline().addLast(new TestServerHandlerAdapter());
+            socketChannel.pipeline().addLast(new TestServerHandlerAdapter2());
         }
     }
 

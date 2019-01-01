@@ -50,8 +50,8 @@ public class TestClient {
                  * 之所以用\r\n结尾 是因为我们在handler中添加了 DelimiterBasedFrameDecoder 帧解码。
                  * 这个解码器是一个根据\n符号位分隔符的解码器。所以每条消息的最后必须加上\n否则无法识别和解码
                  * */
-                //ch.writeAndFlush(line);
-                ch.writeAndFlush(line.getBytes());
+                ch.writeAndFlush(line);
+                //ch.writeAndFlush(line.getBytes());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,11 +67,11 @@ public class TestClient {
 
             //pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Unpooled.copiedBuffer("#".getBytes())));
             // initChannel时，设置为登录用的
-            //pipeline.addLast("encoder", new StringEncoder());
-            //pipeline.addLast("decoder", new StringDecoder());
+            pipeline.addLast("encoder", new StringEncoder());
+            pipeline.addLast("decoder", new StringDecoder());
 
-            pipeline.addLast("encoder", new ByteArrayEncoder());
-            pipeline.addLast("decoder", new ByteArrayDecoder());
+            //pipeline.addLast("encoder", new ByteArrayEncoder());
+            //pipeline.addLast("decoder", new ByteArrayDecoder());
 
             // 以("\n")为结尾分割的解码器
 
