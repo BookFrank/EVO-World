@@ -1,4 +1,0 @@
-# 设置 Tomcat 的线程数
-server:
-  tomcat:
-    max-threads: 2
