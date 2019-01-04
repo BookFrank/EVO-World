@@ -15,14 +15,14 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * Gateway堆外内存日志
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2019/01/04
  */
 @Component
 @Configuration
 @EnableScheduling
 @Slf4j(topic = "GatewayMemoryLog")
-public class GatewayMemoryReporter {
+public class DirectMemoryReporter {
 
     private static final int _1k = 1024;
 
