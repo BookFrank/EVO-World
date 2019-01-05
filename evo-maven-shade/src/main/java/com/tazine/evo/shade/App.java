@@ -1,4 +1,4 @@
-package com.tazine.evo;
+package com.tazine.evo.shade;
 
 /**
  * Hello world!
