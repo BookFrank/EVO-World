@@ -1,5 +1,7 @@
 package com.tazine.evo.socket.netty.test;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -7,6 +9,7 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.util.ReferenceCountUtil;
 
 /**
  * TestClientHandler
@@ -30,8 +33,8 @@ public class TestClientHandler extends SimpleChannelInboundHandler<String> {
             pipeline.addFirst(new StringEncoder());
             pipeline.addFirst(new StringDecoder());
             pipeline.addFirst(new DelimiterBasedFrameDecoder(8092, Delimiters.lineDelimiter()));
-
         }
+        ReferenceCountUtil.release(msg);
     }
 
     @Override

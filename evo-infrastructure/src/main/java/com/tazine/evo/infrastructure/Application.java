@@ -1,18 +1,18 @@
-package com.tazine.evo.guava;
+package com.tazine.evo.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Guava 实践框架相关启动类
+ * 基础设施
  *
  * @author frank
- * @date 2018/09/15
+ * @date 2018/11/11
  */
 @SpringBootApplication
-public class EvoGuavaAllApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(EvoGuavaAllApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

@@ -15,7 +15,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 //@EnableScheduling
 public class SimpleSpringTask {
 
-
     @Scheduled(cron = "0/5 * * * * ?")
     public void schedule1() {
         System.out.println("Hello World -- " + Thread.currentThread().getName());
