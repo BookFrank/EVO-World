@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: evo-springboot
+
 management:
   server:
     port: 7002
@@ -17,11 +21,11 @@ server:
   # access log 日志开关
   tomcat:
     #日志输出目录，这里是设置为当前目录下
-    basedir: /Users/jiaer.ly/logs/evo
+    basedir: /${user.home}/${spring.application.name}/logs/
     accesslog:
       enabled: true
 #      pattern: %h %l %u %t "%r" %s %b %D
-#      directory: /Users/jiaer.ly/logs/evo
+      directory: /
   servlet:
     context-path: /
 
