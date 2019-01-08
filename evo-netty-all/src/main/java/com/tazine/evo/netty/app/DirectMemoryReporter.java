@@ -1,4 +1,4 @@
-package com.tazine.evo.netty;
+package com.tazine.evo.netty.app;
 
 import io.netty.util.internal.PlatformDependent;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.tazine.evo.netty;
+package com.tazine.evo.netty.app;
 
 /**
  * Netty SessionManager

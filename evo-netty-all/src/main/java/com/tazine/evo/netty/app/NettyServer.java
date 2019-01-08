@@ -1,4 +1,4 @@
-package com.tazine.evo.netty;
+package com.tazine.evo.netty.app;
 
 import com.tazine.evo.socket.netty.server.ServerChannelHandler;
 import io.netty.bootstrap.ServerBootstrap;

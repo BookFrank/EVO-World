@@ -1,4 +1,4 @@
-package com.tazine.evo.netty;
+package com.tazine.evo.netty.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

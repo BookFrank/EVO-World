@@ -1,6 +1,6 @@
 package com.tazine.evo.netty.util;
 
-import com.tazine.evo.netty.EvoNettySession;
+import com.tazine.evo.netty.app.EvoNettySession;
 import io.netty.channel.Channel;
 import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
