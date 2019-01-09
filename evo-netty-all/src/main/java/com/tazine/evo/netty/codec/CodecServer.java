@@ -75,7 +75,7 @@ public class CodecServer {
 
             // 2.
             //pipeline.addLast(new GatewayDecoder02(MAX_FRAME_LENGTH, LENGTH_FIELD_LENGTH, LENGTH_FIELD_OFFSET, LENGTH_ADJUSTMENT, INITIAL_BYTES_TO_STRIP, false));
-            pipeline.addLast(new GatewayDecoder02());
+            pipeline.addLast(new GatewayDecoder03());
             pipeline.addLast(new GatewayEncoder());
             pipeline.addLast(new CodecServerHandler());
 
