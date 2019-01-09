@@ -7,7 +7,7 @@
 		<groupId>com.tazine.evo</groupId>
 		<artifactId>EVO-World</artifactId>
 		<version>1.0.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 	</parent>
 
 	<groupId>com.tazine.evo.netty</groupId>
@@ -56,11 +56,11 @@
 			<version>${springboot.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.projectreactor</groupId>-->
+			<!--<artifactId>reactor-test</artifactId>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
 
 		<!-- Netty相关依赖 -->
 		<dependency>

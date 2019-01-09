@@ -1,4 +1,4 @@
-package com.tazine.evo.netty.codec;
+package com.tazine.evo.netty.codec.protocol;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

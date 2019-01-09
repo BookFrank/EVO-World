@@ -1,4 +1,4 @@
-package com.tazine.evo.netty.app;
+package com.tazine.evo.netty.monitor;
 
 import io.netty.util.internal.PlatformDependent;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @Component
 @Configuration
 @EnableScheduling
-@Slf4j(topic = "GatewayMemoryLog")
+//@Slf4j(topic = "GatewayMemoryLog")
 public class DirectMemoryReporter {
 
     private static final int _1k = 1024;
@@ -42,7 +42,8 @@ public class DirectMemoryReporter {
 
     @Scheduled(cron = "0/5 * * * * ?")
     public void report(){
-        System.out.println("[DIRECT_MOMORY] 当前堆外内存 " + directMemory.get()/_1k + " K");
-        log.info("[DIRECT_MOMORY] 当前堆外内存 {} K", directMemory.get()/_1k);
+        //System.out.println("[DIRECT_MOMORY] 当前堆外内存 " + directMemory.get()/_1k + " K");
+        System.out.println("[DIRECT_MOMORY] 当前堆外内存 " + directMemory.get() + " B");
+        //log.info("[DIRECT_MOMORY] 当前堆外内存 {} K", directMemory.get()/_1k);
     }
 }
