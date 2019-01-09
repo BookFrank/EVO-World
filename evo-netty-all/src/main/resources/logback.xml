@@ -57,7 +57,8 @@
         <appender-ref ref="GatewayMemoryLogAppender"/>
     </logger>
 
-    <root level="debug">
+    <!--<root level="debug">-->
+    <root level="info">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="ERROR"/>
         <appender-ref ref="APPLICATION" />

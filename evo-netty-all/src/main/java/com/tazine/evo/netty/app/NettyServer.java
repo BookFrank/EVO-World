@@ -9,6 +9,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.springframework.stereotype.Component;
 
 /**
  * NettyServer
@@ -16,6 +17,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @author frank
  * @date 2018/12/15
  */
+@Component
 public class NettyServer {
 
     private EventLoopGroup bossGroup = new NioEventLoopGroup();

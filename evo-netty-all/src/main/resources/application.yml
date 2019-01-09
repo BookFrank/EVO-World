@@ -1,3 +1,10 @@
 spring:
   application:
     name: evo-netty-all
+
+logging:
+  level:
+    io.netty: debug
+
+
+

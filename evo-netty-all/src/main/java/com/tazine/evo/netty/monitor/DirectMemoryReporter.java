@@ -40,7 +40,7 @@ public class DirectMemoryReporter {
         }
     }
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0/1 * * * * ?")
     public void report(){
         //System.out.println("[DIRECT_MOMORY] 当前堆外内存 " + directMemory.get()/_1k + " K");
         System.out.println("[DIRECT_MOMORY] 当前堆外内存 " + directMemory.get() + " B");

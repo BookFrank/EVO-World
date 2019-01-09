@@ -63,6 +63,7 @@ public class GatewayDecoder extends LengthFieldBasedFrameDecoder {
         if (in.readableBytes() < length) {
             throw new Exception("length描述长度与body实际长度不符");
         }
+
         ByteBuf buf = in.readBytes(length);
         body = new byte[buf.readableBytes()];
         buf.readBytes(body);
