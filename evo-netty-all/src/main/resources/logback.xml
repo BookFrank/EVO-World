@@ -4,10 +4,9 @@
 
     <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
     <property name="LOG_HOME" value="${user.home}/${APP_NAME}/logs"/>
-    <property name="LOG_FILE" value="${LOG_PATH}/application.log" />
+    <property name="LOG_FILE" value="${LOG_HOME}/application.log" />
 
-    <appender name="APPLICATION"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_FILE}</file>
         <encoder>
             <pattern>${FILE_LOG_PATTERN}</pattern>

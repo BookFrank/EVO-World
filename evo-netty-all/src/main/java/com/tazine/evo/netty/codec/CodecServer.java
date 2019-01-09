@@ -1,5 +1,7 @@
 package com.tazine.evo.netty.codec;
 
+import com.alibaba.fastjson.JSON;
+import com.tazine.evo.netty.codec.protocol.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -9,6 +11,7 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,6 +20,7 @@ import org.springframework.stereotype.Component;
  * @author frank
  * @date 2019/01/09
  */
+@Slf4j
 @Component
 public class CodecServer {
 
@@ -64,14 +68,17 @@ public class CodecServer {
             ChannelPipeline pipeline = socketChannel.pipeline();
 
             // 1.
-            pipeline.addLast(new DelimiterBasedFrameDecoder(8092, Delimiters.lineDelimiter()));
-            pipeline.addLast(new StringEncoder());
-            pipeline.addLast(new StringDecoder());
+            //pipeline.addLast(new DelimiterBasedFrameDecoder(8092, Delimiters.lineDelimiter()));
+            //pipeline.addLast(new StringEncoder());
+            //pipeline.addLast(new StringDecoder());
+            //pipeline.addLast(new CodecServerHandler());
+
+            // 2.
+            //pipeline.addLast(new GatewayDecoder02(MAX_FRAME_LENGTH, LENGTH_FIELD_LENGTH, LENGTH_FIELD_OFFSET, LENGTH_ADJUSTMENT, INITIAL_BYTES_TO_STRIP, false));
+            pipeline.addLast(new GatewayDecoder02());
+            pipeline.addLast(new GatewayEncoder());
             pipeline.addLast(new CodecServerHandler());
 
-            //pipeline.addLast(new GatewayDecoder(MAX_FRAME_LENGTH, LENGTH_FIELD_LENGTH, LENGTH_FIELD_OFFSET,
-            // LENGTH_ADJUSTMENT, INITIAL_BYTES_TO_STRIP, false));
-            //pipeline.addLast(new GatewayEncoder());
         }
     }
 
@@ -85,21 +92,26 @@ public class CodecServer {
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
             // 1. 测试使用换行符分隔与 StringDecoder 解码，在自己的 handler 中不释放消息，看内存会不会增加，发送消息不会增加内存
-            if (msg instanceof String) {
-                System.out.println((String)msg);
-
-                // 不加 fireChannelRead 不会触发 tailContext
-                //ctx.fireChannelRead(msg);
-            } else {
-                System.err.println("消息解析错误");
-            }
+            //if (msg instanceof String) {
+            //    System.out.println((String)msg);
+            //    // 不加 fireChannelRead 不会触发 tailContext
+            //    //ctx.fireChannelRead(msg);
+            //} else {
+            //    System.err.println("消息解析错误");
+            //}
 
             // 2. 测试 GatewayDecoder 会不会增加堆外内存
-            //if (msg instanceof GatewayMessage){
-            //
-            //}else {
-            //
-            //}
+            if (msg instanceof GatewayMessage){
+                log.info("[CodecReceive] " + JSON.toJSONString((GatewayMessage)msg));
+            }else {
+                System.err.println("消息解析错误");
+            }
+        }
+
+        @Override
+        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+            cause.printStackTrace();
+            log.error(cause.getMessage());
         }
     }
 

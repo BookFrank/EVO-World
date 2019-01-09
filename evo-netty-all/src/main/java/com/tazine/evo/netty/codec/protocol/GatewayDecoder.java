@@ -5,7 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 /**
- * GatewayDecoder
+ * GatewayDecoder-当QPS大时会有粘包/拆包问题
  *
  * @author frank
  * @date 2018/12/14
