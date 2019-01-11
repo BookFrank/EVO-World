@@ -5,7 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 /**
- * @author jiaer.ly
+ * CodecServerBootstrap
+ *
+ * @author frank
  * @date 2019/01/09
  */
 @Component
