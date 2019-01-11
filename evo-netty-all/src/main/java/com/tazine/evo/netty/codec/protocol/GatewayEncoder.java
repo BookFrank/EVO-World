@@ -7,7 +7,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 /**
  * GatewayEncoder
  *
- * @author rank
+ * @author frank
  * @date 2018/12/14
  */
 public class GatewayEncoder extends MessageToByteEncoder<GatewayMessage> {

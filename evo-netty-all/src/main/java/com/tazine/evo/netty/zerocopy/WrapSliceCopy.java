@@ -25,6 +25,8 @@ public class WrapSliceCopy {
         String xm = "嘉尔";
         ByteBuf buf1 = Unpooled.wrappedBuffer(xm.getBytes());
         ByteBuf header = buf1.slice(0,3);
+
+        // TODO 测试 slice retain
         ByteBuf body = buf1.slice(3, 3);
         byte[] headerBytes = new byte[3];
         byte[] bodyBytes = new byte[3];
