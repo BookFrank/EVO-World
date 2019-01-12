@@ -3,6 +3,7 @@ package com.tazine.evo.netty.codec;
 import com.alibaba.fastjson.JSON;
 import com.tazine.evo.netty.codec.protocol.*;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -74,9 +75,11 @@ public class CodecServer {
             //pipeline.addLast(new CodecServerHandler());
 
             // 2.
-            //pipeline.addLast(new GatewayDecoder02(MAX_FRAME_LENGTH, LENGTH_FIELD_LENGTH, LENGTH_FIELD_OFFSET, LENGTH_ADJUSTMENT, INITIAL_BYTES_TO_STRIP, false));
-            pipeline.addLast(new GatewayDecoder03());
-            pipeline.addLast(new GatewayEncoder());
+            //pipeline.addLast(new GatewayDecoder(MAX_FRAME_LENGTH, LENGTH_FIELD_LENGTH, LENGTH_FIELD_OFFSET, LENGTH_ADJUSTMENT, INITIAL_BYTES_TO_STRIP, false));
+            //pipeline.addLast(new GatewayDecoder03());
+            //pipeline.addLast(new GatewayEncoder());
+
+            // 3.
             pipeline.addLast(new CodecServerHandler());
 
         }
@@ -101,11 +104,19 @@ public class CodecServer {
             //}
 
             // 2. 测试 GatewayDecoder 会不会增加堆外内存
-            if (msg instanceof GatewayMessage){
-                log.info("[CodecReceive] " + JSON.toJSONString((GatewayMessage)msg));
+            //if (msg instanceof GatewayMessage){
+            //    log.info("[CodecReceive] " + JSON.toJSONString((GatewayMessage)msg));
+            //}else {
+            //    System.err.println("消息解析错误");
+            //}
+
+            // 3. 测试不释放 ByteBuf 会发生什么
+            if (msg instanceof ByteBuf){
+                //System.out.println("收到消息");
             }else {
-                System.err.println("消息解析错误");
+                System.err.println("消息格式不是 ByteBuf" + msg.getClass().getName());
             }
+            ctx.fireChannelRead(msg);
         }
 
         @Override

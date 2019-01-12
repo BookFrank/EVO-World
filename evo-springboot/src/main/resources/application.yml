@@ -21,7 +21,7 @@ server:
   # access log 日志开关
   tomcat:
     #日志输出目录，这里是设置为当前目录下
-    basedir: /${user.home}/${spring.application.name}/logs/
+    basedir: /${user.home}/${spring.application.name}/logs
     accesslog:
       enabled: true
 #      pattern: %h %l %u %t "%r" %s %b %D

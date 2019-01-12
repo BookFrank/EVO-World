@@ -1,5 +1,6 @@
 package com.tazine.evo.boot;
 
+import com.tazine.evo.boot.beanext.NioCar;
 import com.tazine.evo.boot.config.property.EvoProperties;
 import com.tazine.evo.boot.config.property.TazineProperties;
 import com.tazine.evo.boot.util.ContextUtil;
@@ -26,6 +27,9 @@ public class EvoSpringBootApplicationTests {
 	@Autowired
 	private ContextUtil contextUtil;
 
+	@Autowired
+	private NioCar nioCar;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -50,5 +54,10 @@ public class EvoSpringBootApplicationTests {
 	@Test
 	public void testCtx(){
 		ContextUtil.getBeanNamesForAnnotation(Service.class);
+	}
+
+	@Test
+	public void factoryBeanTest(){
+		nioCar.info();
 	}
 }
