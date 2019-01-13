@@ -1,4 +1,4 @@
-package com.tazine.evo;
+package com.tazine.evo.mysql;
 
 /**
  * Hello world!
