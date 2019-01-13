@@ -21,7 +21,6 @@ public class JdbcMySQL {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "");
 
             // 3. 创建执行语句的 statement
-            //Statement
             String name = "harden";
             String sql = "delete from player where name='" + name + "'";
             Statement st = conn.createStatement();
@@ -32,8 +31,10 @@ public class JdbcMySQL {
             //PreparedStatement 有效的防止sql注入(SQL语句在程序运行前已经进行了预编译,当运行时动态地把参数传给PrepareStatement时，即使参数里有敏感字符如 or '1=1'也数据库会作为一个参数一个字段的属性值来处理而不会作为一个SQL指令)
             String sql1 = "insert into player (name,number,team ) values(?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql1);
-            ps.setString(1, "james harden");  //占位符顺序从1开始
-            ps.setInt(2, 3); //也可以使用setObject
+            // 占位符顺序从1开始
+            ps.setString(1, "james harden");
+            // 也可以使用setObject
+            ps.setInt(2, 3);
             ps.setString(3,"rockets");
             ps.executeUpdate();
 
