@@ -41,9 +41,26 @@ public class EvoDatasource implements DataSource {
         }
     }
 
+    /**
+     * 从连接池中获取一个连接
+     *
+     * @return Connection
+     * @throws SQLException e
+     */
     @Override
     public Connection getConnection() throws SQLException {
+        System.out.println("从数据源获取连接");
         return pool.removeFirst();
+    }
+
+    /**
+     * 释放连接
+     *
+     * @param connection Connection
+     */
+    public void freeConnection(Connection connection) {
+        System.out.println("释放连接");
+        pool.addLast(connection);
     }
 
     @Override
