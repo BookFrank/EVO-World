@@ -9,7 +9,6 @@
     <modules>
         <module>evo-maven-shade</module>
         <module>evo-test-only</module>
-        <module>evo-neo4j</module>
         <module>evo-infrastructure</module>
         <module>evo-springboot</module>
         <module>evo-springboot-nonweb</module>
@@ -21,6 +20,7 @@
         <module>evo-ddd</module>
         <module>evo-mysql</module>
         <module>evo-hbase</module>
+        <module>evo-neo4j-d3</module>
     </modules>
 
     <name>EVO-World</name>
