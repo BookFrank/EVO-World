@@ -180,6 +180,7 @@
       "netspeed":"1024MB/s"
     }]
   };
+  __options = {"nodes":[{"name":"网关-100.81.210.225","nodeType":"gateway","status":1},{"name":"网关-103.1.32.15","nodeType":"gateway","status":1},{"name":"数据源-bus_changsha","nodeType":"datasource","clientIp":"30.30.28.74","startTime":"2019-02-12","port":64793},{"name":"数据源-bus_dongguan","nodeType":"datasource","clientIp":"30.30.28.31","startTime":"2019-02-12","port":61234},{"name":"数据源-bus_chongqing","nodeType":"datasource","clientIp":"30.30.28.11","startTime":"2019-02-12","port":62311},{"name":"转发器-001","nodeType":"transfer","status":1},{"name":"转发器-002","nodeType":"transfer","status":1},{"name":"TDS-001","nodeType":"server","status":1},{"name":"TDS-002","nodeType":"server","status":1}],"lines":[{"source":2,"target":0,"active":true,"status":1,"qpm":1000},{"source":3,"target":0,"active":true,"status":1,"qpm":1000},{"source":4,"target":1,"active":true,"status":1,"qpm":1000},{"source":0,"target":5,"active":true,"status":1,"qpm":1000},{"source":1,"target":6,"active":true,"status":1,"qpm":1000},{"source":5,"target":7,"active":true,"status":1,"qpm":1000},{"source":6,"target":8,"active":true,"status":1,"qpm":1000}]};
 
   var nodes = [
     {name:"湖南邵阳"},{name:"山东莱州"},{name:"广东阳江"},

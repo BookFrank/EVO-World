@@ -5,9 +5,10 @@ import pic3 from '@/assets/img/clouds/error-tip.png'
 import pic4 from '@/assets/img/clouds/link-cut.png'
 
 const imgMap = {
-  '0': pic0,
-  '1': pic1,
-  '2': pic2,
+  'gateway': pic0,
+  'datasource': pic1,
+  'transfer': pic2,
+  'server': pic0,
   'error-tip': pic3,
   'link-cut': pic4
 };
@@ -92,7 +93,7 @@ class TopoChart {
         return height;
       })
       .attr("xlink:href", function (d) {
-        return imgMap[d.type];
+        return imgMap[d.nodeType];
       });
 
     // Dom 中node添加文本
@@ -116,9 +117,10 @@ class TopoChart {
 
     _g_lines.each(function (d, i) {
       var _this = d3.select(this);
-      if (d.netspeed && d.status != 0) {
+      // if (d.netspeed && d.status != 0) {
+      if (d.status != 0) {
         _this.append("text")
-          .text(d.netspeed)
+          .text("QPM:"+d.qpm)
           .style('fill', 'rgb(255,198,22)')
           .style('font-size', '11');
 
@@ -161,15 +163,34 @@ class TopoChart {
     //添加拖拽行为
     _g_nodes.call(this.getDragBehavior(force));
 
+    // 鼠标悬停事件
     _g_nodes.on('mouseenter', function (d) {
       d3.select(this).style("cursor", "pointer");
 
       // TODO
-      d3.select(_this.container).append(this.createInfoTip(d));
-      d3.select(".node-info").css({
+      // d3.select(_this.container).append(createInfoTip(d));
+      // d3.select(".node-info").css({
+      //   left: d3.event.x + 20,
+      //   top: d3.event.y + 20
+      // }).show();
+
+      d3.select(".node-info").attr('style' ,{
         left: d3.event.x + 20,
         top: d3.event.y + 20
-      }).show();
+      });
+
+      /**
+       * 创建 node 的 Tooltip
+       * @param node
+       * @returns {string}
+       */
+      function createInfoTip(node) {
+        var html = '<div class="node-info"><ul>';
+        html += '<li><span class="info-title">网络情况:</span><span class="info-content">正常</span></li>';
+        html += '</ul></div>';
+
+        return html;
+      }
     });
 
     _g_nodes.on('mouseleave', function () {
@@ -177,11 +198,9 @@ class TopoChart {
       d3.select(".node-info").remove();
     });
 
-
     _g_nodes.on('dblclick.zoom', function () {
       window.location.href = './index2.html';
     });
-
 
     force.on("tick", function () {
 
@@ -382,19 +401,6 @@ class TopoChart {
     function dragend(d) {
       d3.select(this).classed("dragging", false);
     }
-  }
-
-  /**
-   * 创建 node 的 Tooltip
-   * @param node
-   * @returns {string}
-   */
-  createInfoTip(node) {
-    var html = '<div class="node-info"><ul>';
-    html += '<li><span class="info-title">网络情况:</span><span class="info-content">正常</span></li>';
-    html += '</ul></div>';
-
-    return html;
   }
 }
 
