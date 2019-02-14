@@ -2,11 +2,13 @@
   <!--<page-header></page-header>-->
   <div id="tpContainer" style="overflow: hidden">
   </div>
+  <!--<svg width="800" height="800"></svg>-->
 </template>
 
 <script>
   import pageHeader from '@/components/PageHeader.vue'
-  // import TopoChart from '@/components/modules/TopoChart'
+  import TopoGraph from './modules/TopoGraph'
+  import TopoCharts from './modules/TopoCharts'
   import TopoChart from './modules/TopoChart'
 
   let __options = {
@@ -179,9 +181,34 @@
     }]
   };
 
+  var nodes = [
+    {name:"湖南邵阳"},{name:"山东莱州"},{name:"广东阳江"},
+    {name:"山东枣庄"},{name:"泽"},{name:"恒"},
+    {name:"鑫"},{name:"明山"},{name:"班长"}
+  ];
+
+  //边集
+  var edges = [
+    {source:0,target:4,relation:"籍贯",value:1.3},
+    {source:4,target:5,relation:"舍友",value:1},
+    {source:4,target:6,relation:"舍友",value:1},
+    {source:4,target:7,relation:"舍友",value:1},
+    {source:1,target:6,relation:"籍贯",value:2},
+    {source:2,target:5,relation:"籍贯",value:0.9},
+    {source:3,target:7,relation:"籍贯",value:1},
+    {source:5,target:6,relation:"同学",value:1.6},
+    {source:6,target:7,relation:"朋友",value:0.7},
+    {source:6,target:8,relation:"职责",value:2}
+  ];
+
+  var __data = {
+    nodes: nodes,
+    lines: edges
+  };
+
   export default {
     name: 'TcpTopology',
-    components: {pageHeader, TopoChart},
+    components: {pageHeader, TopoGraph, TopoChart, TopoCharts},
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
@@ -196,10 +223,24 @@
       }
     },
     mounted: function () {
-      const topo = new TopoChart.TopoChart("#tpContainer" ,__options);
-      // const topo = new TopoChart.TopoChart("#app" ,__options);
+      // 可用
+      // const topo = new TopoGraph.TopoGraph("#tpContainer" ,__data);
+      // topo.render();
 
-      topo.render();
+
+
+      var tpoption = {
+        container:'#tpContainer',
+        data:__options,
+        width:window.innerWidth || document.documentElement.clientWidth,
+        height:window.innerHeight || document.documentElement.innerHeight
+      };
+      // const topo = new TopoChart.TopoChart();
+      // topo.initi(tpoption);
+
+      const topo = new TopoCharts.TopoChart(tpoption);
+      topo.init();
+
       // console.log(__options);
       // TopoChart.render("#tpContainer" ,__options);
     }
