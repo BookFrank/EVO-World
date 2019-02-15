@@ -120,7 +120,7 @@ class TopoChart {
       // if (d.netspeed && d.status != 0) {
       if (d.status != 0) {
         _this.append("text")
-          .text("QPM:"+d.qpm)
+          .text(d.name+":"+d.value)
           .style('fill', 'rgb(255,198,22)')
           .style('font-size', '11');
 
