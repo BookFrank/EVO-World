@@ -20,6 +20,7 @@
         <module>evo-springboot-swagger</module>
         <module>evo-ddd</module>
         <module>evo-mysql</module>
+        <module>evo-database</module>
     </modules>
 
     <name>EVO-World</name>
