@@ -1,7 +1,7 @@
 {
   "name": "vue",
   "version": "1.0.0",
-  "description": "springboot + vue",
+  "description": "A Vue.js project",
   "author": "Frank <bookfrank@foxmail.com>",
   "private": true,
   "scripts": {

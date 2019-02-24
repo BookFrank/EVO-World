@@ -1,12 +1,11 @@
 <template>
-  <div>
-    头部信息
-  </div>
+    <div>
+        这是PageHeader
+    </div>    
 </template>
 
-
 <script>
-  export default{
-    name: "PageHeader"
-  }
+export default {
+    name: 'PageHeader'
+}
 </script>
