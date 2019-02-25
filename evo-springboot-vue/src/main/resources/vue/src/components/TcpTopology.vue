@@ -12,195 +12,74 @@
   import TopoChart from './modules/TopoChart'
 
   let __options = {
-    "nodes": [
-      {
-        "name": "四川省政务云",
-        "type": "0",
-        "status":"0",
-        "info":{
-          "netstatus":"网络不通"
-        }
-      },{
-        "name": "成都市政务云",
-        "type": "1",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "双流区政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "武侯区政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "龙泉驿区政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "南充市政务云",
-        "type": "1",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "南部县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "蓬安县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "仪陇县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "绵阳市政务云",
-        "type": "1",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "三台县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "梓潼县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      },{
-        "name": "盐亭县政务云",
-        "type": "2",
-        "status":"1",
-        "info":{
-          "netstatus":"网络良好 "
-        }
-      }
-    ],
-    "lines": [{
-      "source": 0,
-      "target": 1,
-      "active": true,
-      "status":0,
-      "netspeed":"1024MB/s"
+    "nodes": [{
+      "clientIp": "30.30.78.24",
+      "name": "数据源-bus_changsha",
+      "nodeType": "datasource",
+      "port": 58830,
+      "startTime": "1970-01-19 06:37:02",
+      "status": 1
     }, {
-      "source": 0,
-      "target": 5,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 0,
-      "target": 9,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
+      "gatewayIp": "100.81.210.225",
+      "name": "网关-100.81.210.225",
+      "nodeType": "gateway",
+      "status": 1
+    }, {
+      "ip": "100.81.210.225",
+      "name": "转发器-100.81.210.225:40987",
+      "nodeType": "transfer",
+      "port": 40987,
+      "startTime": "1970-01-19 06:09:49",
+      "status": 1
+    }, {
+      "name": "TDS服务器-11.239.164.192",
+      "nodeType": "server",
+      "port": 8003,
+      "status": 1,
+      "tdsIp": "11.239.164.192"
+    }, {
+      "ip": "100.81.210.225",
+      "name": "转发器-100.81.210.225:46593",
+      "nodeType": "transfer",
+      "port": 46593,
+      "startTime": "1970-01-19 06:35:30",
+      "status": 1
+    }, {"name": "TDS服务器-11.239.164.192", "nodeType": "server", "port": 8003, "status": 1, "tdsIp": "11.239.164.192"}],
+    "lines": [{"active": "true", "name": "QPM", "source": 0, "status": 1, "target": 1, "value": 4}, {
+      "active": "true",
+      "name": "推送QPM",
       "source": 1,
+      "status": 1,
       "target": 2,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
+      "value": 0
+    }, {"active": "true", "name": "推送QPM", "source": 2, "status": 1, "target": 3, "value": 0}, {
+      "active": "true",
+      "name": "推送QPM",
       "source": 1,
-      "target": 3,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 1,
+      "status": 1,
       "target": 4,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 5,
-      "target": 6,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 5,
-      "target": 7,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 5,
-      "target": 8,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 9,
-      "target": 10,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 9,
-      "target": 11,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    },{
-      "source": 9,
-      "target": 12,
-      "active": true,
-      "status":1,
-      "netspeed":"1024MB/s"
-    }]
+      "value": 4
+    }, {"active": "true", "name": "推送QPM", "source": 4, "status": 1, "target": 5, "value": 4}]
   };
-  // __options = {"nodes":[{"name":"网关-100.81.210.225","nodeType":"gateway","status":1},{"name":"网关-103.1.32.15","nodeType":"gateway","status":1},{"name":"数据源-bus_changsha","nodeType":"datasource","clientIp":"30.30.28.74","startTime":"2019-02-12","port":64793},{"name":"数据源-bus_dongguan","nodeType":"datasource","clientIp":"30.30.28.31","startTime":"2019-02-12","port":61234},{"name":"数据源-bus_chongqing","nodeType":"datasource","clientIp":"30.30.28.11","startTime":"2019-02-12","port":62311},{"name":"转发器-001","nodeType":"transfer","status":1},{"name":"转发器-002","nodeType":"transfer","status":1},{"name":"TDS-001","nodeType":"server","status":1},{"name":"TDS-002","nodeType":"server","status":1}],"lines":[{"source":2,"target":0,"active":true,"status":1,"qpm":1000},{"source":3,"target":0,"active":true,"status":1,"qpm":1000},{"source":4,"target":1,"active":true,"status":1,"qpm":1000},{"source":0,"target":5,"active":true,"status":1,"qpm":1000},{"source":1,"target":6,"active":true,"status":1,"qpm":1000},{"source":5,"target":7,"active":true,"status":1,"qpm":1000},{"source":6,"target":8,"active":true,"status":1,"qpm":1000}]};
-  __options = {"nodes":[{"clientIp":"30.30.78.24","name":"数据源-bus_changsha","nodeType":"datasource","port":58830,"startTime":"1970-01-19 06:37:02","status":1},{"gatewayIp":"100.81.210.225","name":"网关-100.81.210.225","nodeType":"gateway","status":1},{"ip":"100.81.210.225","name":"转发器-100.81.210.225:40987","nodeType":"transfer","port":40987,"startTime":"1970-01-19 06:09:49","status":1},{"name":"TDS服务器-11.239.164.192","nodeType":"server","port":8003,"status":1,"tdsIp":"11.239.164.192"},{"ip":"100.81.210.225","name":"转发器-100.81.210.225:46593","nodeType":"transfer","port":46593,"startTime":"1970-01-19 06:35:30","status":1},{"name":"TDS服务器-11.239.164.192","nodeType":"server","port":8003,"status":1,"tdsIp":"11.239.164.192"}],"lines":[{"active":"true","name":"QPM","source":0,"status":1,"target":1,"value":4},{"active":"true","name":"推送QPM","source":1,"status":1,"target":2,"value":0},{"active":"true","name":"推送QPM","source":2,"status":1,"target":3,"value":0},{"active":"true","name":"推送QPM","source":1,"status":1,"target":4,"value":4},{"active":"true","name":"推送QPM","source":4,"status":1,"target":5,"value":4}]};
 
   var nodes = [
-    {name:"湖南邵阳"},{name:"山东莱州"},{name:"广东阳江"},
-    {name:"山东枣庄"},{name:"泽"},{name:"恒"},
-    {name:"鑫"},{name:"明山"},{name:"班长"}
+    {name: "湖南邵阳"}, {name: "山东莱州"}, {name: "广东阳江"},
+    {name: "山东枣庄"}, {name: "泽"}, {name: "恒"},
+    {name: "鑫"}, {name: "明山"}, {name: "班长"}
   ];
 
   //边集
   var edges = [
-    {source:0,target:4,relation:"籍贯",value:1.3},
-    {source:4,target:5,relation:"舍友",value:1},
-    {source:4,target:6,relation:"舍友",value:1},
-    {source:4,target:7,relation:"舍友",value:1},
-    {source:1,target:6,relation:"籍贯",value:2},
-    {source:2,target:5,relation:"籍贯",value:0.9},
-    {source:3,target:7,relation:"籍贯",value:1},
-    {source:5,target:6,relation:"同学",value:1.6},
-    {source:6,target:7,relation:"朋友",value:0.7},
-    {source:6,target:8,relation:"职责",value:2}
+    {source: 0, target: 4, relation: "籍贯", value: 1.3},
+    {source: 4, target: 5, relation: "舍友", value: 1},
+    {source: 4, target: 6, relation: "舍友", value: 1},
+    {source: 4, target: 7, relation: "舍友", value: 1},
+    {source: 1, target: 6, relation: "籍贯", value: 2},
+    {source: 2, target: 5, relation: "籍贯", value: 0.9},
+    {source: 3, target: 7, relation: "籍贯", value: 1},
+    {source: 5, target: 6, relation: "同学", value: 1.6},
+    {source: 6, target: 7, relation: "朋友", value: 0.7},
+    {source: 6, target: 8, relation: "职责", value: 2}
   ];
 
   var __data = {
@@ -211,7 +90,7 @@
   export default {
     name: 'TcpTopology',
     components: {pageHeader, TopoGraph, TopoChart, TopoCharts},
-    data () {
+    data() {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
@@ -230,21 +109,31 @@
       // topo.render();
 
 
-
-      var tpoption = {
-        container:'#tpContainer',
-        data:__options,
-        width:window.innerWidth || document.documentElement.clientWidth,
-        height:window.innerHeight || document.documentElement.innerHeight
-      };
+      // var tpoption = {
+      //   container:'#tpContainer',
+      //   data:__options,
+      //   width:window.innerWidth || document.documentElement.clientWidth,
+      //   height:window.innerHeight || document.documentElement.innerHeight
+      // };
       // const topo = new TopoChart.TopoChart();
       // topo.initi(tpoption);
 
-      const topo = new TopoCharts.TopoChart(tpoption);
-      topo.init();
+      // const topo = new TopoCharts.TopoChart(tpoption);
+      // topo.init();
 
       // console.log(__options);
       // TopoChart.render("#tpContainer" ,__options);
+
+      if (this.timer) {
+        cleanInterval(this.timer);
+      } else {
+        this.timer = setInterval(() => {
+          console.log("haha");
+        }, 1000);
+      }
+    },
+    destoryed: function () {
+      cleanInterval(this.timer);
     }
   }
 </script>
@@ -265,7 +154,7 @@
   }
 
   .node-info ul li {
-    color:#fff;
+    color: #fff;
     font-size: 12px;
   }
 </style>
