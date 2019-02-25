@@ -1,11 +1,9 @@
 package com.tazine.evo.crontab;
 
-import com.google.common.collect.Lists;
-
-import java.util.List;
-
 /**
- * @author jiaer.ly
+ * Test
+ *
+ * @author frank
  * @date 2018/09/07
  */
 public class Test {

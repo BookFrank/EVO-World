@@ -19,6 +19,7 @@
         <module>evo-springboot-swagger</module>
         <module>evo-ddd</module>
         <module>evo-mysql</module>
+        <module>evo-database</module>
         <module>evo-hbase</module>
         <module>evo-neo4j-d3</module>
     </modules>

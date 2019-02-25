@@ -1,4 +1,4 @@
-package com.tazine.evo.mysql;
+package com.tazine.evo.db;
 
 
 import java.sql.*;
