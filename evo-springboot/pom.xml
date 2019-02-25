@@ -16,7 +16,7 @@
 	<packaging>jar</packaging>
 
 	<name>evo-springboot</name>
-	<description>SpringBoot基本使用</description>
+	<description>SpringBoot 2.x 基本使用</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
