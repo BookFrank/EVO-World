@@ -10,7 +10,7 @@ import java.util.TimerTask;
 /**
  * Timer 的简单用法
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/09/05
  */
 public class SimpleTimer {
@@ -50,7 +50,6 @@ public class SimpleTimer {
                 System.out.println(now - start);
                 start = now;
             }
-        },1000, 5000);
-
+        }, 1000, 5000);
     }
 }
