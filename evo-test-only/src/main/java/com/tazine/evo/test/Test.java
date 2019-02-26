@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author jiaer.ly
+ * @author frank
  * @date 2018/10/11
  */
 public class Test {
