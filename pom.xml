@@ -9,6 +9,7 @@
     <modules>
         <module>evo-maven-shade</module>
         <module>evo-test-only</module>
+        <module>evo-file-io</module>
         <module>evo-infrastructure</module>
         <module>evo-springboot</module>
         <module>evo-springboot-nonweb</module>
