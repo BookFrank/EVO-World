@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Topology from '@/components/TcpTopology'
-import HelloWorld from '@/components/HelloWorld'
+import Topology from '@/pages/TcpTopology'
+import TopologyV4 from '@/pages/TopologyV4'
+import HelloWorld from '@/pages/HelloWorld'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
       redirect: {
-        name: 'Topology'
+        name: 'TopologyV4'
       },
     },
     {
@@ -23,6 +24,11 @@ export default new Router({
       path: '/top',
       name: 'Topology',
       component: Topology
+    },
+    {
+      path: '/v4',
+      name: 'TopologyV4',
+      component: TopologyV4
     }
   ]
 })

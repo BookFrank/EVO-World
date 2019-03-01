@@ -1,3 +1,5 @@
+// D3.js v3 创建力导向图
+
 import pic0 from '@/assets/img/clouds/cloud-province.png'
 import pic1 from '@/assets/img/clouds/cloud-city.png'
 import pic2 from '@/assets/img/clouds/cloud-county.png'
@@ -12,7 +14,7 @@ const imgMap = {
   'link-cut': pic4
 };
 
-class TopoChart {
+class TopologyChart {
 
   constructor(option) {
     // 合并配置
@@ -143,12 +145,12 @@ class TopoChart {
       }
     });
 
-    var force = d3.layout.force()
-      .nodes(nodes)
-      .links(lines)
-      .size([width, height])
-      .linkDistance(function (d) {
-        var distance = 90;
+    var force = d3.layout.force() // layout将 json 格式转化为力学图可用的格式
+      .nodes(nodes) // 设定节点数组
+      .links(lines) //
+      .size([width, height]) // 作用域的大小 :
+      .linkDistance(function (d) { // 连接线的长度
+        var distance = 90; //
         distance += distance * Math.random() * 0.5;
         return distance;
       })
@@ -403,5 +405,5 @@ class TopoChart {
 }
 
 export default {
-  TopoChart
+  TopologyChart
 }

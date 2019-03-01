@@ -1,15 +1,13 @@
 <template>
-  <!--<page-header></page-header>-->
   <div id="tpContainer" style="overflow: hidden">
   </div>
-  <!--<svg width="800" height="800"></svg>-->
 </template>
 
 <script>
   import pageHeader from '@/components/PageHeader.vue'
-  import TopoGraph from './modules/TopoGraph'
-  import TopoCharts from './modules/TopoCharts'
-  import TopoChart from './modules/TopoChart'
+  import TopoGraph from '../components/modules/TopoGraph'
+  import TopoCharts from '../components/modules/TopoCharts'
+  import TopoChart from '../components/modules/TopoChart'
 
   let __options = {
     "nodes": [{
