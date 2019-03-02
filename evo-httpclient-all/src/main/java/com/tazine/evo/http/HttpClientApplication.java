@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2018/09/15
  */
 @SpringBootApplication
-public class EvoHttpclientAllApplication {
+public class HttpClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EvoHttpclientAllApplication.class, args);
+        SpringApplication.run(HttpClientApplication.class, args);
     }
 }
