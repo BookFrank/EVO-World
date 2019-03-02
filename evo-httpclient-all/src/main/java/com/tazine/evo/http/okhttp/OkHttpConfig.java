@@ -17,6 +17,7 @@ public class OkHttpConfig {
     public OkHttpClient okHttpClient(){
         OkHttpClient httpClient = new OkHttpClient();
         // 设置连接超时
+        return httpClient;
     }
 
 }
