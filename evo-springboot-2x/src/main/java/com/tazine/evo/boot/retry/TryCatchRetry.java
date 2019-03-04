@@ -5,7 +5,7 @@ import org.springframework.util.StringUtils;
 /**
  * TryCatchRedo-简单重试模式
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2019/03/04
  */
 public class TryCatchRetry {
