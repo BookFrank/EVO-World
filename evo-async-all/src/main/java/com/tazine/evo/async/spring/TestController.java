@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    private AsyncInstance asyncInstance;
+    private AsyncService asyncService;
 
     @RequestMapping("/sync")
     public String syncTest() {
         for (int i = 1; i < 101; i++) {
-            asyncInstance.syncRun(i);
+            asyncService.syncRun(i);
         }
         return "Hello Sync";
     }
@@ -28,7 +28,7 @@ public class TestController {
     public String asyncTest() {
         for (int i = 1; i < 101; i++) {
             System.out.println(Thread.currentThread().getName() + " 开始执行任务：" + i);
-            asyncInstance.asyncRun(i);
+            asyncService.asyncRun(i);
         }
         return "Hello Async";
     }

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2018/09/16
  */
 @Service
-public class AsyncInstance {
+public class AsyncService {
 
     public void syncRun(int i){
         System.out.println(Thread.currentThread().getName() + " -- " + i);
