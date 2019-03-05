@@ -1,4 +1,4 @@
-package com.tazine.evo.async;
+package com.tazine.evo.async.tomcat;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class TestService {
 
 
-    @Async("async-service")
+//    @Async("async-service")
     public void sleep(){
         System.out.println("ThreadName： " + Thread.currentThread().getName());
         try {
