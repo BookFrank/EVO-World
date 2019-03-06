@@ -25,12 +25,12 @@ public class TaskExecutorConfiguration {
     /**
      * 核心线程数
      */
-    private int corePoolSize = 1;
+    private int corePoolSize = 2;
 
     /**
      * 最大线程数
      */
-    private int maxPoolSize = 2;
+    private int maxPoolSize = 4;
 
     /**
      * 队列长度

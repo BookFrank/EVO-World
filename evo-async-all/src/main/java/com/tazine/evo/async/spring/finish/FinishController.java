@@ -4,17 +4,13 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * FinishController
@@ -25,6 +21,9 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RestController
 public class FinishController {
+
+    @Autowired
+    private FinishService finishService;
 
     @Autowired
     //@Qualifier("async-service")
@@ -40,15 +39,15 @@ public class FinishController {
         }
         log.info("任务提交完毕");
         List<Integer> list = Lists.newArrayList();
-        int i =1;
-        while (true){
+        int i = 1;
+        while (true) {
             System.out.println("循环：" + i++);
-            if (futureList.size() == 0){
+            if (futureList.size() == 0) {
                 break;
             }
-            for (int j = 0; j< futureList.size(); j++){
+            for (int j = 0; j < futureList.size(); j++) {
                 Future f = futureList.get(j);
-                if (f.isDone()){
+                if (f.isDone()) {
                     list.add((Integer)f.get());
                     futureList.remove(f);
                 }
@@ -59,22 +58,22 @@ public class FinishController {
     }
 
     @RequestMapping("/f2")
-    public String f2() throws Exception{
+    public String f2() throws Exception {
         List<Future<Integer>> futureList = Lists.newArrayList();
         for (int i = 0; i < 4; i++) {
-            futureList.add(asyncProcess());
+            futureList.add(finishService.asyncProcess());
         }
         log.info("任务提交完毕");
         List<Integer> list = Lists.newArrayList();
-        int i =1;
-        while (true){
+        int i = 1;
+        while (true) {
             System.out.println("循环：" + i++);
-            if (futureList.size() == 0){
+            if (futureList.size() == 0) {
                 break;
             }
-            for (int j = 0; j< futureList.size(); j++){
+            for (int j = 0; j < futureList.size(); j++) {
                 Future f = futureList.get(j);
-                if (f.isDone()){
+                if (f.isDone()) {
                     list.add((Integer)f.get());
                     futureList.remove(f);
                 }
@@ -84,9 +83,31 @@ public class FinishController {
         return list.toString();
     }
 
+    @RequestMapping("/f3")
+    public String f3() throws Exception {
+        CountDownLatch latch = new CountDownLatch(4);
+        List<Future<Integer>> futureList = Lists.newArrayList();
+        for (int i = 0; i < 4; i++) {
+            futureList.add(executor.submit(() -> latchProcess(latch)));
+        }
+        log.info("任务提交完毕");
+        latch.await();
+        log.info("任务全部执行完毕");
+        List<Integer> list = Lists.newArrayList();
+        for (int j = 0; j < futureList.size(); j++) {
+            Future f = futureList.get(j);
+            if (f.isDone()) {
+                list.add((Integer)f.get());
+            }else{
+                log.error("还没执行完毕");
+            }
+        }
+        return list.toString();
+    }
+
     private int process() {
         log.info("执行中");
-        int sec = new Random().nextInt(3);
+        int sec = new Random().nextInt(5);
         System.out.println(sec + " s");
         try {
             TimeUnit.SECONDS.sleep(sec);
@@ -96,15 +117,17 @@ public class FinishController {
         return sec;
     }
 
-    private ListenableFuture<Integer> asyncProcess() {
+    private int latchProcess(CountDownLatch latch) {
         log.info("执行中");
-        int sec = new Random().nextInt(3);
+        int sec = new Random().nextInt(5);
         System.out.println(sec + " s");
         try {
             TimeUnit.SECONDS.sleep(sec);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new AsyncResult<>(sec);
+        latch.countDown();
+        log.info("进行countDown，剩余 {} 个", latch.getCount());
+        return sec;
     }
 }
