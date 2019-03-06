@@ -9,7 +9,7 @@ package com.tazine.evo.async.jdk.singeleton;
 public class ConcurrentTest {
 
     public static void main(String[] args) {
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 6; i++) {
             new Thread(() -> SingleBean.getInstance().exec(), "线程" + i).start();
         }
     }

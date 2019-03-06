@@ -1,4 +1,4 @@
-package com.tazine.evo.async;
+package com.tazine.evo.async.tomcat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class TestThreadController {
     private TestService testService;
 
     @RequestMapping("/test")
-    public String hi(){
+    public String hi() {
         testService.sleep();
         return "Hello World";
     }
