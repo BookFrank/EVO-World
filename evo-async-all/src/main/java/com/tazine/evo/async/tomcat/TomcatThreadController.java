@@ -5,20 +5,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 测试线程池慢了以后什么操作
+ * Tomcat线程池测试
  *
  * @author frank
  * @date 2018/12/13
  */
 @RestController
-public class TestThreadController {
+public class TomcatThreadController {
 
     @Autowired
-    private TestService testService;
+    private AppService appService;
 
     @RequestMapping("/test")
     public String hi() {
-        testService.sleep();
+        appService.syncSleep();
         return "Hello World";
     }
 }
