@@ -1,6 +1,7 @@
 package com.tazine.evo.boot.retry;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
@@ -16,6 +17,9 @@ import org.springframework.util.StringUtils;
 @Slf4j
 @Service
 public class RetryService {
+
+    @Autowired
+    private RetryApi retryApi;
 
     private static int i = 1;
 
@@ -37,7 +41,7 @@ public class RetryService {
     @Retryable(value = {RetryException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000L, multiplier = 1))
     public String getResultFromHttp() {
         String ret = null;
-        //ret = "Hello World";
+        ret = retryApi.getHttpResult();
         if (StringUtils.isEmpty(ret)) {
             log.info("重试请求...");
             i++;
