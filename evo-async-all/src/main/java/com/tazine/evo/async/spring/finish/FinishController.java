@@ -105,6 +105,28 @@ public class FinishController {
         return list.toString();
     }
 
+    @RequestMapping("/f4")
+    public String f4() throws Exception {
+        CountDownLatch latch = new CountDownLatch(4);
+        List<Future<Integer>> futureList = Lists.newArrayList();
+        for (int i = 0; i < 4; i++) {
+            futureList.add(finishService.latchProcess(latch));
+        }
+        log.info("任务提交完毕");
+        latch.await();
+        log.info("任务全部执行完毕");
+        List<Integer> list = Lists.newArrayList();
+        for (int j = 0; j < futureList.size(); j++) {
+            Future f = futureList.get(j);
+            if (f.isDone()) {
+                list.add((Integer)f.get());
+            }else{
+                log.error("还没执行完毕");
+            }
+        }
+        return list.toString();
+    }
+
     private int process() {
         log.info("执行中");
         int sec = new Random().nextInt(5);
