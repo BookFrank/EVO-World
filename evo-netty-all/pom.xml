@@ -7,7 +7,6 @@
 		<groupId>com.tazine.evo</groupId>
 		<artifactId>EVO-World</artifactId>
 		<version>1.0.0</version>
-		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 	</parent>
 
 	<groupId>com.tazine.evo.netty</groupId>
