@@ -1,9 +1,6 @@
 package com.tazine.evo.boot.retry;
 
-import com.github.rholder.retry.Retryer;
-import com.github.rholder.retry.RetryerBuilder;
-import com.github.rholder.retry.StopStrategies;
-import com.github.rholder.retry.WaitStrategies;
+import com.github.rholder.retry.*;
 import com.google.common.base.Predicates;
 
 import java.util.Date;
