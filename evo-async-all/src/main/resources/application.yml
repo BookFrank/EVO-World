@@ -1,3 +1,4 @@
 server:
   tomcat:
-    max-threads: 2
+    min-spare-threads: 2
+    max-threads: 5
