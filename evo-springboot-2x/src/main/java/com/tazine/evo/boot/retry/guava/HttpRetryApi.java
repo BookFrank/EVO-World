@@ -23,8 +23,8 @@ public class HttpRetryApi {
     }
 
     private static void test(){
-        Retryer<String> retryer = RetryerBuilder.newBuilder()
-            .retryIfException()
+        //Retryer<String> retryer = RetryerBuilder.newBuilder()
+        //    .retryIfException()
             //.retryIfResult()
 
     }
