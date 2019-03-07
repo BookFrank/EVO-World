@@ -13,7 +13,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 /**
- * FinishController
+ * FinishController 多线程阻塞进行
  *
  * @author frank
  * @date 2019/3/5

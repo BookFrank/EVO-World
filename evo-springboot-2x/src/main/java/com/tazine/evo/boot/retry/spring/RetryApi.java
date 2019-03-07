@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.retry;
+package com.tazine.evo.boot.retry.spring;
 
 import org.springframework.stereotype.Component;
 
