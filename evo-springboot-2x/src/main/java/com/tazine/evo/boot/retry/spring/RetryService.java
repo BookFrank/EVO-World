@@ -61,18 +61,12 @@ public class RetryService {
      * recover方法须有返回值
      *
      * @param e RetryException
-     * @return
+     * @return e
      */
     @Recover
     public String recover(RetryException e) {
         System.out.println("调用 recover 方法");
         System.out.println(e.getMsg());
-        return "recover被调用";
+        throw e;
     }
-
-    //@Recover
-    //public void recover(RuntimeException e) {
-    //    System.out.println("调用 recover 方法");
-    //    System.out.println(e.getMessage());
-    //}
 }
