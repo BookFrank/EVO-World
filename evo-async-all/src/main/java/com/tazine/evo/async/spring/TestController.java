@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 /**
  * 测试控制器
  *
@@ -39,5 +43,17 @@ public class TestController {
     public String asyncFuture() throws Exception {
         log.info("进入 /future 接口内部");
         return asyncService.sayHello("frank").get();
+    }
+
+    @RequestMapping("/timeout")
+    public String asyncTimeout() throws Exception {
+        log.info("进入 /timeout 接口内部");
+        try {
+            String s = asyncService.sayHello("frank").get(1, TimeUnit.SECONDS);
+            return s;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "error";
     }
 }
