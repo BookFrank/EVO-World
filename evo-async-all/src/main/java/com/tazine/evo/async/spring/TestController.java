@@ -1,5 +1,6 @@
 package com.tazine.evo.async.spring;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author frank
  * @date 2018/09/16
  */
+@Slf4j
 @RestController
 public class TestController {
 
@@ -31,5 +33,11 @@ public class TestController {
             asyncService.asyncRun(i);
         }
         return "Hello Async";
+    }
+
+    @RequestMapping("/future")
+    public String asyncFuture() throws Exception {
+        log.info("进入 /future 接口内部");
+        return asyncService.sayHello("frank").get();
     }
 }
