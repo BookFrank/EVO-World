@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 /**
  * @author jiaer.ly
@@ -18,8 +19,9 @@ public class TestController {
     private DataSource dataSource;
 
     @RequestMapping("/test")
-    public String test(){
+    public String test() throws SQLException {
         System.out.println(dataSource.getClass().getName());
+        System.out.println(dataSource.getConnection().prepareStatement("SELECT * FROM customer").executeQuery().getString("name"));
         return JSON.toJSONString(dataSource);
     }
 
