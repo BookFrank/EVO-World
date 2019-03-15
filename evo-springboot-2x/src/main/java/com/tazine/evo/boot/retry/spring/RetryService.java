@@ -54,19 +54,5 @@ public class RetryService {
         } else {
             return ret;
         }
-        //throw new RuntimeException("请求接口失败");
-    }
-
-    /**
-     * recover方法须有返回值
-     *
-     * @param e RetryException
-     * @return e
-     */
-    @Recover
-    public String recover(RetryException e) {
-        System.out.println("调用 recover 方法");
-        System.out.println(e.getMsg());
-        throw e;
     }
 }
