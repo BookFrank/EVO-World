@@ -32,9 +32,5 @@ public class FilePathDemo {
         // /target/classes/
         System.out.println(path3);
         //System.out.println(path4);
-
-
-
     }
-
 }
