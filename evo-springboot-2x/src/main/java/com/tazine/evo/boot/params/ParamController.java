@@ -1,7 +1,9 @@
 package com.tazine.evo.boot.params;
 
 import com.google.common.base.Charsets;
+import com.tazine.evo.boot.params.validation.NbaDraftRequest;
 import org.apache.commons.io.IOUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,4 +35,13 @@ public class ParamController {
         return s;
     }
 
+    @RequestMapping("/param/body1")
+    public NbaDraftRequest bodyPost(@RequestBody NbaDraftRequest draftRequest) throws IOException {
+        return draftRequest;
+    }
+
+    @RequestMapping("/param/body2")
+    public String bodyPost(@RequestBody String name, @RequestBody String num) throws IOException {
+        return name + " - " + num;
+    }
 }
