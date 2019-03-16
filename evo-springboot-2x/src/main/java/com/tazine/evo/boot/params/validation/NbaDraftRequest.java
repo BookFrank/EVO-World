@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.validation;
+package com.tazine.evo.boot.params.validation;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;

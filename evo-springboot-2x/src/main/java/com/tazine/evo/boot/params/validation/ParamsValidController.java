@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.validation;
+package com.tazine.evo.boot.params.validation;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
