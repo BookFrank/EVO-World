@@ -1,14 +1,17 @@
 package com.tazine.evo.boot.params;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
 import com.tazine.evo.boot.params.validation.NbaDraftRequest;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * ParamController
@@ -52,9 +55,20 @@ public class ParamController {
         return draftRequest;
     }
 
+    /**
+     * 1 @RequestBody 和 @RequestParam 同时使用问题
+     *
+     * @param draftRequest NbaDraftRequest
+     * @param names        names
+     * @return s
+     * @throws IOException e
+     */
     @RequestMapping("/param/body2")
-    public String bodyPost(@RequestBody String name, @RequestBody int age, @RequestBody String email)
-        throws IOException {
-        return name + " - " + age + " - " + email;
+    public List<String> jsonPost(@RequestBody NbaDraftRequest draftRequest, @RequestParam("names") List<String> names) {
+        //return name + " - " + age + " - " + email;
+        System.out.println(JSON.toJSONString(draftRequest));
+        return names;
     }
+
+    // @RequestParam使用
 }

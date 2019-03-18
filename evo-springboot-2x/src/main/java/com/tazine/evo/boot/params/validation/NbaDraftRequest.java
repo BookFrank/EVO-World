@@ -14,7 +14,6 @@ import javax.validation.constraints.Min;
 @Data
 public class NbaDraftRequest {
 
-
     private String name;
 
     @Min(value = 18)
