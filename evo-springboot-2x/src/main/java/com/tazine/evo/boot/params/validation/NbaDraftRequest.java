@@ -1,5 +1,7 @@
 package com.tazine.evo.boot.params.validation;
 
+import lombok.Data;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 
@@ -9,6 +11,7 @@ import javax.validation.constraints.Min;
  * @author frank
  * @date 2018/11/14
  */
+@Data
 public class NbaDraftRequest {
 
 
