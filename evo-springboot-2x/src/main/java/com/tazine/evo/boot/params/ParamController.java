@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.ServletRequest;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * ParamController
@@ -56,7 +57,7 @@ public class ParamController {
     }
 
     /**
-     * 1 @RequestBody 和 @RequestParam 同时使用问题
+     * - @RequestBody 和 @RequestParam 同时使用问题
      *
      * @param draftRequest NbaDraftRequest
      * @param names        names
@@ -70,5 +71,15 @@ public class ParamController {
         return names;
     }
 
-    // @RequestParam使用
+    /**
+     * request.getParameterMap 可以获得URL中的参数和 application/x-www-form-urlencoded 以及 application/form-data 中传递的参数
+     *
+     * @param request ServletRequest
+     * @return Map<String, String []>
+     */
+    @RequestMapping("/param/map")
+    public Map<String, String[]> request(ServletRequest request) {
+        //return name + " - " + age + " - " + email;
+        return request.getParameterMap();
+    }
 }
