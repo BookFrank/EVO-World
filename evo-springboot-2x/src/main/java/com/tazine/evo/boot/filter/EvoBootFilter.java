@@ -21,7 +21,7 @@ public class EvoBootFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
         throws IOException, ServletException {
         System.err.println("进入 EvoBootFilter");
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
         System.err.println("退出 EvoBootFilter");
     }
 

@@ -80,6 +80,7 @@ public class ParamController {
     @RequestMapping("/param/map")
     public Map<String, String[]> request(ServletRequest request) {
         //return name + " - " + age + " - " + email;
+        // getParameterMap 可以同时获得URL传参和 form-data
         return request.getParameterMap();
     }
 }
