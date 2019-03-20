@@ -26,7 +26,7 @@ public class WebLogAspect {
     /**
      * 定义切入点，切入点为 com.tazine.evo.boot 下的所有函数
      */
-    @Pointcut("execution(public * com.tazine.evo.boot.aware.*.*(..))")
+    @Pointcut("execution(public * com.tazine.evo.boot.params.*.*(..))")
     public void webLog() {}
 
     /**

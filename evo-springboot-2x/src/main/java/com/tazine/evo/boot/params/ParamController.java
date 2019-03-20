@@ -94,4 +94,15 @@ public class ParamController {
 
         return request.getParameterMap();
     }
+
+    @RequestMapping("/req/param")
+    public String req(@RequestParam(value = "name", required = true) String name) {
+        //return name + " - " + age + " - " + email;
+        // getParameterMap 可以同时获得URL传参和 form-data
+
+        // 127.0.0.1:7001/param/map?name=kobe&name=james
+        // request.getParameter("name") 只能得到kobe
+        // request.getParameterMap() 可以得到 name:[kobe,james]
+        return name;
+    }
 }
