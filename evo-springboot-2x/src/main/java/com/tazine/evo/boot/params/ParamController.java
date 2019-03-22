@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletRequest;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Map;
 
@@ -104,5 +106,11 @@ public class ParamController {
         // request.getParameter("name") 只能得到kobe
         // request.getParameterMap() 可以得到 name:[kobe,james]
         return name;
+    }
+
+    @RequestMapping("/env")
+    public Object env(){
+        //return System.getenv();
+        return JSON.toJSONString(System.getProperties());
     }
 }
