@@ -10,10 +10,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author jiaer.ly
+ * OfficialAsyncHttpTest
+ *
+ * @author frank
  * @date 2019/03/21
  */
-public class Test {
+public class OfficialAsyncHttpTest {
 
     private static AsyncHttpClientConfig buildAsyncHttpClientConfig() {
         return new DefaultAsyncHttpClientConfig.Builder()
@@ -27,9 +29,9 @@ public class Test {
             .build();
     }
 
-    public static void main(String[]args) throws Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println("Starting Client init");
-        try(DefaultAsyncHttpClient httpClient = new DefaultAsyncHttpClient(buildAsyncHttpClientConfig());) {
+        try (DefaultAsyncHttpClient httpClient = new DefaultAsyncHttpClient(buildAsyncHttpClientConfig());) {
             System.out.println("Client init Complete!");
 
             //shows leak
@@ -42,8 +44,9 @@ public class Test {
 
     private static void threadPoolExec(DefaultAsyncHttpClient httpClient) throws InterruptedException {
         System.out.println("Thread Pool");
-        ThreadPoolExecutor exec = new ThreadPoolExecutor(10, 10, 500, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(200));
-        while(true) {
+        ThreadPoolExecutor exec = new ThreadPoolExecutor(10, 10, 500, TimeUnit.SECONDS,
+            new ArrayBlockingQueue<Runnable>(200));
+        while (true) {
             Thread.sleep(10);
             System.out.println("提交任务");
             exec.execute(() -> {
@@ -63,12 +66,13 @@ public class Test {
             });
         }
     }
-    private static void manualThreads(DefaultAsyncHttpClient httpClient){
+
+    private static void manualThreads(DefaultAsyncHttpClient httpClient) {
         System.out.println("ManualThreads");
-        for(int j = 0; j < 10; j++){
+        for (int j = 0; j < 10; j++) {
             final int q = j;
             Thread thread = new Thread(() -> {
-                while(true){
+                while (true) {
                     try {
                         Future<Response> result = httpClient.executeRequest(prepareRequest(),
                             new AsyncCompletionHandler<Response>() {
@@ -87,10 +91,10 @@ public class Test {
             thread.start();
         }
 
-        while(true){}
+        while (true) {}
     }
 
-    private static final String JSON ="{\"adCodes\":[110000],\"startTime\":15282144001,\"endTime\":1548732800,"
+    private static final String JSON = "{\"adCodes\":[110000],\"startTime\":15282144001,\"endTime\":1548732800,"
         + "\"order\":1,\"pageNum\":1,\"pageSize\":5,\"queryList\":[{\"congestRate\":0.02,\"congestType\":1,"
         + "\"distance\":800,\"duration\":4,\"roadType\":0},{\"congestRate\":0.02,\"congestType\":1,\"distance\":700,"
         + "\"duration\":4,\"roadType\":1},{\"congestRate\":0.02,\"congestType\":1,\"distance\":700,\"duration\":4,"
