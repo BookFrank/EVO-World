@@ -23,6 +23,7 @@
         <module>evo-hbase</module>
         <module>evo-neo4j-d3</module>
         <module>evo-springboot-2x</module>
+        <module>evo-reactive</module>
     </modules>
 
     <name>EVO-World</name>
