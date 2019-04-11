@@ -14,6 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class AppService {
 
+    /**
+     * 让该线程一直沉睡
+     */
     public void syncSleep() {
         System.out.println("ThreadName： " + Thread.currentThread().getName());
         try {
@@ -23,7 +26,8 @@ public class AppService {
         }
     }
 
-    @Async("async-service")
+    @Async
+    //@Async("async-service")
     public void asyncSleep() {
         System.out.println("ThreadName： " + Thread.currentThread().getName());
         try {
