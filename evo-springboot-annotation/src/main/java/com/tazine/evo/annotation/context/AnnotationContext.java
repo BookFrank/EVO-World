@@ -1,6 +1,6 @@
 package com.tazine.evo.annotation.context;
 
-import com.tazine.evo.annotation.EvoSpringBootAnnotationApplication;
+import com.tazine.evo.annotation.AnnotationApplication;
 import com.tazine.evo.annotation.aware.ContextAwareService;
 import com.tazine.evo.annotation.aware.ResourceAwareService;
 import com.tazine.evo.annotation.conditional.ConditionConfiguration;
@@ -53,7 +53,7 @@ public class AnnotationContext {
         // 通过设定 Environment 的 ActiveProfiles 来设定当前 context 需要使用的配置环境
         context.getEnvironment().setActiveProfiles("dev");
         System.err.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
-        context.register(EvoSpringBootAnnotationApplication.class);
+        context.register(AnnotationApplication.class);
         context.refresh();
 
         ResourceAwareService resourceAwareService = context.getBean(ResourceAwareService.class);
