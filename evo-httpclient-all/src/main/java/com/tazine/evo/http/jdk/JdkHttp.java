@@ -1,4 +1,4 @@
-package com.tazine.evo.http;
+package com.tazine.evo.http.jdk;
 
 import org.apache.commons.io.IOUtils;
 

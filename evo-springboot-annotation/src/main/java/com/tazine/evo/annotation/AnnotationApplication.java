@@ -1,7 +1,5 @@
 package com.tazine.evo.annotation;
 
-import com.tazine.evo.annotation.conditional.ConditionConfiguration;
-import com.tazine.evo.annotation.event.EventConfiguration;
 import com.tazine.evo.noscan.NoScanConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,11 +17,11 @@ import org.springframework.context.annotation.Import;
 @ComponentScan("com.tazine.evo.annotation")
 @Import(NoScanConfiguration.class)
 @SpringBootApplication
-public class EvoSpringBootAnnotationApplication {
+public class AnnotationApplication {
 
     public static void main(String[] args) {
 
-        start1(args, EvoSpringBootAnnotationApplication.class);
+        start1(args, AnnotationApplication.class);
 
 
         //start2(args);
@@ -46,13 +44,13 @@ public class EvoSpringBootAnnotationApplication {
      * @param args 命令行参数
      */
     private static void start2(String[] args) {
-        ApplicationContext context = new SpringApplicationBuilder(EvoSpringBootAnnotationApplication.class)
+        ApplicationContext context = new SpringApplicationBuilder(AnnotationApplication.class)
             .profiles("dev")
             .run(args);
     }
 
     private static void start3(String[] args) {
-        SpringApplication app = new SpringApplication(EvoSpringBootAnnotationApplication.class);
+        SpringApplication app = new SpringApplication(AnnotationApplication.class);
         app.setBanner(null);
         app.run(args);
     }

@@ -13,15 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
+@RequestMapping("/tomcat")
 public class TomcatThreadController {
 
     @Autowired
     private AppService appService;
 
-    @RequestMapping("/test")
-    public String hi() {
-        log.info("enter controller");
-        //appService.syncSleep();
+    @RequestMapping("/async")
+    public String async(){
+        appService.asyncSleep();
+        return "Hello Sync";
+    }
+
+    @RequestMapping("/sync")
+    public String sync() {
+        log.info("enter sync controller");
+        appService.syncSleep();
         return "Hello World";
     }
 }
