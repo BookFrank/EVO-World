@@ -29,4 +29,22 @@ server:
   servlet:
     context-path: /
 
+mail:
+  host: localhost
+  port: 25
+  smtp:
+    auth: false
+    starttls-enable: false
+  from: me@localhost
+  username: duan
+  password: duan123456
 
+email:
+  host: localhost
+  port: 25
+  smtp:
+    auth: false
+    starttls-enable: false
+  from: me@localhost
+  username: duan
+  password: duan123456

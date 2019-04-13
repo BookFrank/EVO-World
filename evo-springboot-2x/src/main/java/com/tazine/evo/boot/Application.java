@@ -1,6 +1,8 @@
 package com.tazine.evo.boot;
 
 import com.tazine.evo.boot.config.property.EvoProperties;
+import com.tazine.evo.boot.config.property.MailInitProperties;
+import com.tazine.evo.boot.config.property.MailProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -13,7 +15,7 @@ import org.springframework.retry.annotation.EnableRetry;
  * @author frank
  * @date 2018/11/11
  */
-@EnableConfigurationProperties({EvoProperties.class})
+@EnableConfigurationProperties({EvoProperties.class, MailInitProperties.class})
 @EnableRetry
 @ServletComponentScan
 @SpringBootApplication

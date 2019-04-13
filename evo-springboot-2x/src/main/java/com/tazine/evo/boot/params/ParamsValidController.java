@@ -1,4 +1,4 @@
-package com.tazine.evo.boot.params.validation;
+package com.tazine.evo.boot.params;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +14,7 @@ import java.util.Date;
  * @author frank
  * @date 2018/11/13
  */
-@RestController
+//@RestController
 public class ParamsValidController {
 
     /**

@@ -21,8 +21,8 @@ public class TestController {
     @RequestMapping("/test")
     public String test() throws SQLException {
         System.out.println(dataSource.getClass().getName());
-        System.out.println(dataSource.getConnection().prepareStatement("SELECT * FROM customer").executeQuery().getString("name"));
-        return JSON.toJSONString(dataSource);
+//        System.out.println(dataSource.getConnection().prepareStatement("SELECT * FROM customer").executeQuery().getString("name"));
+        return JSON.toJSONString(dataSource.getClass().getTypeName());
     }
 
 }
