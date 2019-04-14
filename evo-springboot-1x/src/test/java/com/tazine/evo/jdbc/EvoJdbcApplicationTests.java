@@ -1,7 +1,7 @@
 package com.tazine.evo.jdbc;
 
 import com.alibaba.fastjson.JSON;
-import com.tazine.evo.jdbc.entity.NbaPlayer;
+import com.tazine.evo.boot.NbaPlayer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

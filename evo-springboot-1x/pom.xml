@@ -86,6 +86,19 @@
             <version>${springboot.version}</version>
         </dependency>
 
+        <!-- 使用JdbcTemplate需要用到的依赖 Start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
+        <!-- 使用JdbcTemplate需要用到的依赖 End -->
+
         <!-- 三方工具包 -->
         <dependency>
             <groupId>commons-io</groupId>
