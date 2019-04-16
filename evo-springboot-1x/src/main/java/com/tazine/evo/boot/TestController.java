@@ -2,11 +2,17 @@ package com.tazine.evo.boot;
 
 import com.alibaba.fastjson.JSON;
 import com.tazine.evo.boot.aware.LoaderAware;
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletRequest;
 import javax.sql.DataSource;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.sql.SQLException;
 
 /**
@@ -33,5 +39,27 @@ public class TestController {
     @RequestMapping("/cl")
     public String getCl(){
         return loaderAware.getClassLoader().getClass().getName();
+    }
+
+    @RequestMapping("/hi")
+    public String hi(ServletRequest request) throws IOException {
+        // 当为 form-data 时，req.getReader()会报错；inputStream不为空；
+        // 当为 x-www-form-urlencoded 是正常；InputStream 是空；
+        //System.out.println(null == request.getInputStream());
+        System.out.println(JSON.toJSONString(request.getParameterMap()));
+        //BufferedReader reader = request.getReader();
+        byte[] body = readBytes(request.getReader(), "utf-8");
+        return new String(body == null ? "null".getBytes() : body);
+    }
+
+    private byte[] readBytes(BufferedReader br, String encoding) throws IOException {
+        String str = null, retStr = "";
+        while ((str = br.readLine()) != null) {
+            retStr += str;
+        }
+        if (!StringUtils.isEmpty(retStr)) {
+            return retStr.getBytes(Charset.forName(encoding));
+        }
+        return null;
     }
 }
