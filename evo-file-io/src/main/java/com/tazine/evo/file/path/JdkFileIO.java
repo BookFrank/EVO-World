@@ -1,4 +1,4 @@
-package com.tazine.evo.file;
+package com.tazine.evo.file.path;
 
 import java.io.IOException;
 import java.nio.file.Files;
