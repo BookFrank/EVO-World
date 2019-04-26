@@ -3,10 +3,9 @@ package com.tazine.evo.boot.config.property;
 import lombok.Data;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
- * Created by lina on 2019-04-13.
+ * MailInitProperties
  *
  * @author frank
  * @date 2019-04-13
@@ -47,5 +46,4 @@ public class MailInitProperties implements InitializingBean {
             this.starttlsEnable = starttlsEnable;
         }
     }
-
 }

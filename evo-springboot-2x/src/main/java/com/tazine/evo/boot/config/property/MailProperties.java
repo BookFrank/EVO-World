@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by lina on 2019-04-13.
+ * MailProperties
  *
  * @author frank
  * @date 2019-04-13
