@@ -1,7 +1,7 @@
 package com.tazine.evo.file.transfer;
 
 /**
- * Created by lina on 2019/3/31.
+ * CharTransfer
  *
  * @author frank
  * @date 2019/3/31
