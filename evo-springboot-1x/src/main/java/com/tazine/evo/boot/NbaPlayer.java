@@ -14,5 +14,4 @@ public class NbaPlayer {
     private String name;
     private String team;
     private Integer num;
-
 }

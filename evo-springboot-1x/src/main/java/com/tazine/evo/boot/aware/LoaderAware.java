@@ -4,7 +4,7 @@ import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by frank on 2019-04-14.
+ * 获取加载Bean的ClassLoader
  *
  * @author frank
  * @date 2019-04-14
