@@ -1,5 +1,6 @@
 package com.tazine.evo.annotation.conditional;
 
+import com.tazine.evo.annotation.conditional.boot.DomainService;
 import com.tazine.evo.annotation.conditional.raw.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,14 @@ public class ConditionTestController {
 
     @Autowired
     private RedisService redisService;
+
+    @Autowired
+    private DomainService domainService;
+
+    @RequestMapping("/domain")
+    public String testDomain(){
+        return domainService.where();
+    }
 
     @RequestMapping("/redis")
     public String testRedis(){

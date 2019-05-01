@@ -1,5 +1,8 @@
 package com.tazine.evo.annotation.conditional;
 
+import com.tazine.evo.annotation.conditional.boot.*;
+import com.tazine.evo.annotation.conditional.raw.RedisService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Conditional;
@@ -33,4 +36,19 @@ public class ConditionConfiguration {
         return new LinuxListService();
     }
 
+    @Bean
+    @ComputerDomain(domain = "local")
+    @ConditionalOnClass(ComputerDomainCondition.class)
+    public DomainService localRedis(){
+        System.out.println("localRedis");
+        return new LocalDomainService();
+    }
+
+    @Bean
+    @ComputerDomain(domain = "hongkong")
+    @ConditionalOnClass(ComputerDomainCondition.class)
+    public DomainService hkRedis(){
+        System.out.println("hkRedis");
+        return new HongKongDomainService();
+    }
 }
