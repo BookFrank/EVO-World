@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Import;
  * @author frank
  * @date 2018/09/15
  */
-@ComponentScan("com.tazine.evo.annotation")
+//@ComponentScan("com.tazine.evo.annotation")
 @Import(NoScanConfiguration.class)
 @SpringBootApplication
 public class AnnotationApplication {
@@ -47,6 +47,7 @@ public class AnnotationApplication {
         ApplicationContext context = new SpringApplicationBuilder(AnnotationApplication.class)
             .profiles("dev")
             .run(args);
+
     }
 
     private static void start3(String[] args) {
@@ -54,5 +55,4 @@ public class AnnotationApplication {
         app.setBanner(null);
         app.run(args);
     }
-
 }
