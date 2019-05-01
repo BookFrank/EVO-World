@@ -4,7 +4,7 @@ import com.tazine.evo.annotation.AnnotationApplication;
 import com.tazine.evo.annotation.aware.ContextAwareService;
 import com.tazine.evo.annotation.aware.ResourceAwareService;
 import com.tazine.evo.annotation.conditional.ConditionConfiguration;
-import com.tazine.evo.annotation.conditional.ListFileService;
+import com.tazine.evo.annotation.conditional.spring.ListFileService;
 import com.tazine.evo.annotation.event.DemoEventPublisher;
 import com.tazine.evo.annotation.event.EventConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

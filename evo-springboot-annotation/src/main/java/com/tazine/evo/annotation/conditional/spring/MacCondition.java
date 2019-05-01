@@ -1,20 +1,20 @@
-package com.tazine.evo.annotation.conditional;
+package com.tazine.evo.annotation.conditional.spring;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- * 判定 Windows 的条件
+ * MacCondition
  *
  * @author frank
  * @date 2018/09/26
  */
-public class WindowsCondition implements Condition {
+public class MacCondition implements Condition {
 
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-        System.err.println("WindowsCondition: " + context.getEnvironment().getProperty("os.name"));
-        return context.getEnvironment().getProperty("os.name").contains("Windows");
+        System.err.println("MacCondition: " + context.getEnvironment().getProperty("os.name"));
+        return context.getEnvironment().getProperty("os.name").contains("Mac");
     }
 }

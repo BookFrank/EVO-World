@@ -1,4 +1,4 @@
-package com.tazine.evo.annotation.conditional;
+package com.tazine.evo.annotation.conditional.spring;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
