@@ -28,6 +28,9 @@ public class TestController {
     @Autowired
     private LoaderAware loaderAware;
 
+    @Autowired
+    private TestWrapService testWrapService;
+
     @RequestMapping("/ds")
     public String test() throws SQLException {
         // SpringBoot1.x 的默认的数据源是 org.apache.tomcat.jdbc.pool.DataSource
@@ -50,6 +53,12 @@ public class TestController {
         //BufferedReader reader = request.getReader();
         byte[] body = readBytes(request.getReader(), "utf-8");
         return new String(body == null ? "null".getBytes() : body);
+    }
+
+    @RequestMapping("/say")
+    public String say(){
+        testWrapService.hi();
+        return "say";
     }
 
     private byte[] readBytes(BufferedReader br, String encoding) throws IOException {
