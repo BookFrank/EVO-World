@@ -9,7 +9,9 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * @author jiaer.ly
+ * TestController
+ *
+ * @author frank
  * @date 2018/11/28
  */
 @RestController
@@ -24,5 +26,4 @@ public class TestController {
 //        System.out.println(dataSource.getConnection().prepareStatement("SELECT * FROM customer").executeQuery().getString("name"));
         return JSON.toJSONString(dataSource.getClass().getTypeName());
     }
-
 }
