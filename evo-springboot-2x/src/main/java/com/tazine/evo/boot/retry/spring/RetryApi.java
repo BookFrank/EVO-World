@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * RetryApi-模拟外部调用API
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2019/03/04
  */
 @Component
