@@ -9,7 +9,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 /**
  * ServerChannelProcess
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/12/28
  */
 public class ServerChannelProcess extends SimpleChannelInboundHandler<String> {
