@@ -1,13 +1,12 @@
-package com.tazine.evo.boot;
+package com.tazine.evo.boot.conf;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
- * Created by lina on 2019-05-05.
+ * TestWrapService
  *
  * @author frank
- * @date 2019-05-05
+ * @date 2019/05/05
  */
 public class TestWrapService {
 
@@ -18,7 +17,7 @@ public class TestWrapService {
         this.testService = testService;
     }
 
-    public void hi(){
+    public void hi() {
         testService.sayHello();
     }
 }

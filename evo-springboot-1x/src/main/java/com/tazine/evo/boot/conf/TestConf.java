@@ -1,13 +1,13 @@
-package com.tazine.evo.boot;
+package com.tazine.evo.boot.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by lina on 2019-05-05.
+ * Nested Bean Conf
  *
  * @author frank
- * @date 2019-05-05
+ * @date 2019/05/05
  */
 @Configuration
 public class TestConf {

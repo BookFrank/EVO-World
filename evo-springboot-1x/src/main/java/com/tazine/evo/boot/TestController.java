@@ -2,7 +2,7 @@ package com.tazine.evo.boot;
 
 import com.alibaba.fastjson.JSON;
 import com.tazine.evo.boot.aware.LoaderAware;
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import com.tazine.evo.boot.conf.TestWrapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +16,8 @@ import java.nio.charset.Charset;
 import java.sql.SQLException;
 
 /**
+ * TestController
+ *
  * @author frank
  * @date 2018/11/28
  */
@@ -40,7 +42,7 @@ public class TestController {
     }
 
     @RequestMapping("/cl")
-    public String getCl(){
+    public String getCl() {
         return loaderAware.getClassLoader().getClass().getName();
     }
 
@@ -56,7 +58,7 @@ public class TestController {
     }
 
     @RequestMapping("/say")
-    public String say(){
+    public String say() {
         testWrapService.hi();
         return "say";
     }
