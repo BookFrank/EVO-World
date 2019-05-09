@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * SpringBoot Gui CMD 应用
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/11/19
  */
 @SpringBootApplication
