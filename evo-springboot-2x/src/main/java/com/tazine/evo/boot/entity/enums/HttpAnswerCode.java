@@ -6,7 +6,7 @@ import lombok.Setter;
 /**
  * HTTP 响应码
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/05/03
  */
 public enum HttpAnswerCode {

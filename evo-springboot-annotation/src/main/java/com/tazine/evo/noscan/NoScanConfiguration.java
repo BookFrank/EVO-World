@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * NoScanConfiguration
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/09/26
  */
 @Configuration

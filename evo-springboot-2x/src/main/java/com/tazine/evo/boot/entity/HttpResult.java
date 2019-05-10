@@ -9,7 +9,7 @@ import lombok.ToString;
 /**
  * HTTP 响应对象
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2018/05/02
  */
 @Getter

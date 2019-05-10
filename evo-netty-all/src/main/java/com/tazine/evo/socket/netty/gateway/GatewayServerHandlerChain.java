@@ -1,6 +1,5 @@
 package com.tazine.evo.socket.netty.gateway;
 
-import com.tazine.evo.socket.netty.server.ServerChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -8,10 +7,11 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
-import io.netty.handler.timeout.IdleStateHandler;
 
 /**
- * @author jiaer.ly
+ * GatewayServerHandlerChain
+ *
+ * @author frank
  * @date 2018/12/12
  */
 public class GatewayServerHandlerChain extends ChannelInitializer<SocketChannel> {
