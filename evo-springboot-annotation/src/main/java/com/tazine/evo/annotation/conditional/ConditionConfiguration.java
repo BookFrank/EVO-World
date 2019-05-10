@@ -37,7 +37,7 @@ public class ConditionConfiguration {
     }
 
     @Bean
-    @ComputerDomain(domain = "local")
+    @ComputerDomain
     @ConditionalOnClass(ComputerDomainCondition.class)
     public DomainService localRedis(){
         System.out.println("localRedis");

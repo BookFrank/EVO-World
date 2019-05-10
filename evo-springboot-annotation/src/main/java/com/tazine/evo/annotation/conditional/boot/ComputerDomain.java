@@ -15,5 +15,5 @@ import java.lang.annotation.*;
 @Documented
 @Conditional(ComputerDomainCondition.class)
 public @interface ComputerDomain {
-    String domain() default "et2";
+    String domain() default "local";
 }
