@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author frank
  * @date 2017/10/31
  */
-public class TimeClient01 {
+public class TimeClientOne {
 
     private BufferedReader br;
 
@@ -21,7 +21,7 @@ public class TimeClient01 {
 
     private Scanner scanner;
 
-    public TimeClient01(String host, int port) {
+    public TimeClientOne(String host, int port) {
 
         try {
             Socket socket = new Socket(host, port);
@@ -53,7 +53,7 @@ public class TimeClient01 {
     }
 
     public static void main(String[] args) {
-        new TimeClient01("127.0.0.1", 8080);
+        new TimeClientOne("127.0.0.1", 8080);
 //        new TimeClient01("218.107.195.122", 18081);
 
     }
