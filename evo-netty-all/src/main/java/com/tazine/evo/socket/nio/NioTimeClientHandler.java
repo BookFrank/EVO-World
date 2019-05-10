@@ -14,7 +14,7 @@ import java.util.Set;
  * NioTimeClientHandler
  *
  * @author frank
- * @since 1.0.0
+ * @date 2017/11/01
  */
 public class NioTimeClientHandler implements Runnable {
 
@@ -68,7 +68,7 @@ public class NioTimeClientHandler implements Runnable {
 
         if (key.isValid()) {
             // 处理新接入的请求
-            SocketChannel sc = (SocketChannel) key.channel();
+            SocketChannel sc = (SocketChannel)key.channel();
             if (key.isConnectable()) {
                 if (sc.finishConnect()) {
                     sc.register(selector, SelectionKey.OP_READ);
