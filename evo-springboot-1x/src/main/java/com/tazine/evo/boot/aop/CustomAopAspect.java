@@ -23,17 +23,17 @@ public class CustomAopAspect {
     public Object Interceptor(ProceedingJoinPoint pjp) {
         Object result = null;
         Object[] args = pjp.getArgs();
+        System.out.println("进入 AOP");
         if (args != null && args.length > 0) {
-            String deviceId = (String)args[0];
-            if (!"03".equals(deviceId)) {
-                return "no anthorization";
-            }
+            String param = (String)args[0];
+            System.out.println("请求参数为：" + param);
         }
         try {
             result = pjp.proceed();
         } catch (Throwable e) {
             e.printStackTrace();
         }
+        System.out.println("返回值为：" + result);
         return result;
     }
 }

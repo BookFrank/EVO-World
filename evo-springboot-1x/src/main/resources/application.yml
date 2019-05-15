@@ -6,5 +6,5 @@ spring:
     password:
     driver-class-name: com.mysql.jdbc.Driver
 
-server:
-  context-path: /home
+#server:
+#  context-path: /home
