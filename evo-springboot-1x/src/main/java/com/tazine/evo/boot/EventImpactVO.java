@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 事件影响结果对象
  *
- * @author jiaer.ly
+ * @author frank
  * @date 2019/04/25
  */
 @Data
