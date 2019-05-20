@@ -20,7 +20,7 @@ public class CustomAopAspect {
     public void addAdvice() {}
 
     @Around("addAdvice()")
-    public Object Interceptor(ProceedingJoinPoint pjp) {
+    public Object interceptor(ProceedingJoinPoint pjp) {
         Object result = null;
         Object[] args = pjp.getArgs();
         System.out.println("进入 AOP");
