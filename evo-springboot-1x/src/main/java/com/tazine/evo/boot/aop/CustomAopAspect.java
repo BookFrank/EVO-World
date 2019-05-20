@@ -1,9 +1,7 @@
 package com.tazine.evo.boot.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,13 +15,43 @@ import org.springframework.stereotype.Component;
 public class CustomAopAspect {
 
     @Pointcut("@annotation(com.tazine.evo.boot.aop.CustomAop)")
-    public void addAdvice() {}
+    public void customPointCut() {}
 
-    @Around("addAdvice()")
-    public Object interceptor(ProceedingJoinPoint pjp) {
+    //声明前置通知
+    @Before("customPointCut()")
+    public void doBefore(){
+        System.out.println("前置通知");
+    }
+
+    //后置通知，包括异常
+    @After("customPointCut()")
+    public void doAfter(){
+        System.out.println("后置通知，包括异常");
+    }
+
+    //声明例外通知
+    @AfterThrowing(pointcut="customPointCut()",throwing = "e")
+    public void doAfterThrowing(Exception e){
+        System.out.println("异常通知");
+    }
+
+    //声明后置通知
+    @AfterReturning(pointcut="customPointCut()",returning="result")
+    public void daAfterReturning(String result){
+        System.out.println("后置通知，连接点完成，不包括异常： " + result);
+    }
+
+    /**
+     * 声明环绕式通知
+     *
+     * @param pjp
+     * @return
+     */
+    @Around("customPointCut()")
+    public Object Interceptor(ProceedingJoinPoint pjp) {
         Object result = null;
         Object[] args = pjp.getArgs();
-        System.out.println("进入 AOP");
+        System.out.println("环绕式通知");
         if (args != null && args.length > 0) {
             String param = (String)args[0];
             System.out.println("请求参数为：" + param);
