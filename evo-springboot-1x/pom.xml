@@ -68,6 +68,13 @@
             <version>${springboot.version}</version>
         </dependency>
 
+        <!-- Redis相关 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
+
         <!-- Spring-Retry -->
         <dependency>
             <groupId>org.springframework.retry</groupId>
