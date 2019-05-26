@@ -1,6 +1,6 @@
 package com.tazine.evo.boot;
 
-import com.tazine.evo.boot.util.RedLock;
+import com.tazine.evo.boot.util.redlock.SimpRedLock;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RedisLockTest {
 
     @Autowired
-    private RedLock redLock;
+    private SimpRedLock simpRedLock;
 
     @Test
     public void testLockOne() {
@@ -46,7 +46,7 @@ public class RedisLockTest {
 
         log.info(lockKey + " ---------------");
         // 加锁
-        while (!redLock.lock(lockKey, lockVal)) {
+        while (!simpRedLock.lock(lockKey, lockVal)) {
             try {
                 Thread.sleep(500);
                 System.err.println("   " + lockVal + " 尝试获取锁");
@@ -60,6 +60,6 @@ public class RedisLockTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        redLock.unlock(lockKey, lockVal);
+        simpRedLock.unlock(lockKey, lockVal);
     }
 }
