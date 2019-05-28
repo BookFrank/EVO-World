@@ -115,6 +115,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.51</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.tazine.evo</groupId>
+            <artifactId>evo-infrastructure</artifactId>
+            <version>0.0.1.SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
