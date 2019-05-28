@@ -1,6 +1,6 @@
-package com.tazine.evo.common.entity;
+package com.tazine.evo.infrastructure.common.entity;
 
-import com.tazine.evo.common.entity.enums.HttpAnswerCode;
+import com.tazine.evo.infrastructure.common.entity.enums.HttpAnswerCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.tazine.evo.common.entity.enums;
+package com.tazine.evo.infrastructure.common.entity.enums;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -37,7 +37,7 @@ public enum HttpAnswerCode {
     UNEXPECTED_ERROR(4, "Unexpected error"),
 
     /**
-     * 超出 Sentinel 限流配置，拒绝请求
+     * 超出限流配置，拒绝请求
      */
     REQUEST_BLOCKED(5, "Exceeds the rate limit and rejects the request")
     ;

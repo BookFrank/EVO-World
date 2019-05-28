@@ -1,4 +1,4 @@
-package com.tazine.evo.common.entity;
+package com.tazine.evo.infrastructure.common.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

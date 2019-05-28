@@ -1,4 +1,4 @@
-package com.tazine.evo;
+package com.tazine.evo.infrastructure;
 
 import lombok.Data;
 

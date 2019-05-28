@@ -1,4 +1,4 @@
-package com.tazine.evo.common;
+package com.tazine.evo.infrastructure.common;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;

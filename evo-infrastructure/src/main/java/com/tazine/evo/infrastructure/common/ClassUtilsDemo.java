@@ -1,4 +1,4 @@
-package com.tazine.evo.common;
+package com.tazine.evo.infrastructure.common;
 
 /**
  * ClassUtilsDemo

@@ -1,7 +1,7 @@
-package com.tazine.evo;
+package com.tazine.evo.infrastructure;
 
-import com.tazine.evo.common.RestResponseBuilder;
-import com.tazine.evo.common.entity.HttpResult;
+import com.tazine.evo.infrastructure.common.RestResponseBuilder;
+import com.tazine.evo.infrastructure.common.entity.HttpResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

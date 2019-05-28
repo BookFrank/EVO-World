@@ -1,7 +1,7 @@
-package com.tazine.evo.common;
+package com.tazine.evo.infrastructure.common;
 
-import com.tazine.evo.common.entity.HttpResult;
-import com.tazine.evo.common.entity.enums.HttpAnswerCode;
+import com.tazine.evo.infrastructure.common.entity.HttpResult;
+import com.tazine.evo.infrastructure.common.entity.enums.HttpAnswerCode;
 
 /**
  * Rest 风格响应建造器
