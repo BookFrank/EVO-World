@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 基础设施
+ * 基础设施 Starter
  *
  * @author frank
  * @date 2018/11/11
