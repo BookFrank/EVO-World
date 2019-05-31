@@ -22,3 +22,5 @@ spring:
       min-idle: 0
     #server:
 #  context-path: /home
+test:
+  name: jiaer

@@ -25,6 +25,7 @@
         <module>evo-neo4j-d3</module>
         <module>evo-reactive</module>
         <module>evo-shiro</module>
+        <module>evo-soul-gateway</module>
     </modules>
 
     <name>EVO-World</name>
