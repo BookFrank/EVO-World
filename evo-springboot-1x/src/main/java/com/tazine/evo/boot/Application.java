@@ -1,7 +1,10 @@
 package com.tazine.evo.boot;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
@@ -15,6 +18,14 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        ApplicationContext context = new SpringApplicationBuilder(Application.class)
+            //.profiles("dev")
+            .run(args);
+
+        for (String b : context.getBeanDefinitionNames()){
+            System.out.println(b + " - " + context.getBean(b).getClass());
+        }
+
+        System.err.println(JSON.toJSONString(context.getEnvironment()));
     }
 }

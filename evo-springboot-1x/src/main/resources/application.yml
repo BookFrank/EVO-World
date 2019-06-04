@@ -24,3 +24,18 @@ spring:
 #  context-path: /home
 test:
   name: jiaer
+
+tazine:
+  druid:
+    app: TAZINE_BRAIN_APP
+    sharding: false
+    base-package: com.amap.tis.test.mapper
+    type-aliases-package: com.amap.tis.test.entity
+    apps:
+      boot: TAZINE_BOOT_APP
+    shardings:
+      boot: false
+    base-packages:
+      boot: com.amap.tis.test.mapper
+    type-aliases-packages:
+      boot: com.amap.tis.test.entity
