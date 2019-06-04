@@ -26,6 +26,7 @@
         <module>evo-reactive</module>
         <module>evo-shiro</module>
         <module>evo-soul-gateway</module>
+        <module>evo-mqtt</module>
     </modules>
 
     <name>EVO-World</name>
