@@ -27,6 +27,7 @@
         <module>evo-shiro</module>
         <module>evo-soul-gateway</module>
         <module>evo-mqtt</module>
+        <module>evo-springboot-mybatis</module>
     </modules>
 
     <name>EVO-World</name>
