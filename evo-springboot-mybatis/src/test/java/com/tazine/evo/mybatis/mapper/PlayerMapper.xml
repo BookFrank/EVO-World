@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 是 mapper 的完整包名 -->
+<mapper namespace="com.tazine.evo.mybatis.mapper.PlayerMapper">
+    <insert id="listPlayer" parameterType="">
+        SELECT * FROM player
+    </insert>
+</mapper>
