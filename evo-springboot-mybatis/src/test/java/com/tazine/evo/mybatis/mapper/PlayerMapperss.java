@@ -8,7 +8,7 @@ import java.util.List;
  * @author frank
  * @date 2019/06/13
  */
-public interface PlayerMapper {
+public interface PlayerMapperss {
 
     public List<Player> listPlayer();
 

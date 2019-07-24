@@ -1,6 +1,7 @@
 package com.tazine.evo.mybatis;
 
-import com.tazine.evo.mybatis.mapper.PlayerMapper;
+import com.alibaba.fastjson.JSON;
+import com.tazine.evo.mybatis.mapper.PlayerMapperss;
 import com.tazine.evo.mybatis.model.Player;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -33,13 +34,14 @@ public class MybatisTest {
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
             PlayerMapper playerMapper = sqlSession.getMapper(PlayerMapper.class);
-            List<Player> result = playerMapper.listPlayer();
+            Player result = playerMapper.getPlayerByName("kobe");
             sqlSession.commit();
 
             if (null != result){
-                result.forEach(v -> {
-                    System.out.println(v.getName());
-                });
+//                result.forEach(v -> {
+//                    System.out.println(v.getName());
+//                });
+                System.out.println(JSON.toJSONString(result));
             }
         } catch (IOException e) {
             e.printStackTrace();

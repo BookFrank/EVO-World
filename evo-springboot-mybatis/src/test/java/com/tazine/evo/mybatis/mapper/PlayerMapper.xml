@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace 是 mapper 的完整包名 -->
 <mapper namespace="com.tazine.evo.mybatis.mapper.PlayerMapper">
-    <insert id="listPlayer" parameterType="">
-        SELECT * FROM player
-    </insert>
+    <select id="getPlayerByName" parameterType="String" resultType="User">
+        SELECT * FROM player where name = #{name}
+    </select>
 </mapper>
