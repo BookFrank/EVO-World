@@ -28,6 +28,8 @@
         <module>evo-soul-gateway</module>
         <module>evo-mqtt</module>
         <module>evo-springboot-mybatis</module>
+        <module>evo-boot-hibernate</module>
+        <module>evo-boot-mybatis</module>
     </modules>
 
     <name>EVO-World</name>
