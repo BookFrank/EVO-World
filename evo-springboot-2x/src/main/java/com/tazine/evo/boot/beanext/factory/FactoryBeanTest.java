@@ -1,5 +1,6 @@
-package com.tazine.evo.boot.beanext;
+package com.tazine.evo.boot.beanext.factory;
 
+import com.tazine.evo.boot.beanext.NioCar;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 

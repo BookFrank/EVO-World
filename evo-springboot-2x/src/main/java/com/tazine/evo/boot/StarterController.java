@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StarterController {
 
-    @Autowired
-    private TestService testService;
+    //@Autowired
+    //private TestService testService;
 
     @RequestMapping("/h")
     public String hi(){
-        testService.hi();
+        //testService.hi();
         return "hi";
     }
 }
