@@ -25,15 +25,20 @@
 		<springboot.version>2.0.5.RELEASE</springboot.version>
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<!-- SpringBoot 框架依赖库 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
-		<!-- SpringBoot 框架依赖库 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-dependencies</artifactId>
-			<version>${springboot.version}</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
