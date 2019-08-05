@@ -7,6 +7,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.junit.Test;
 
 /**
+ * 不使用连接池的HttpClient
+ *
  * @author frank
  * @date 2019/08/05
  */
@@ -16,7 +18,7 @@ public class HttpClientWithoutPoolTest extends BaseHttpClientTest {
     public void test() throws Exception {
         startUpAllThreads(getRunThreads(new HttpThread()));
         // 等待线程运行
-        for (;;);
+        for (; ; ) { ; }
     }
 
     private class HttpThread implements Runnable {

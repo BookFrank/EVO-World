@@ -18,10 +18,12 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 使用连接池的HttpClient
+ *
  * @author frank
  * @date 2019/08/05
  */
-public class HttpClientWithPoolTest extends BaseHttpClientTest{
+public class HttpClientWithPoolTest extends BaseHttpClientTest {
 
     private CloseableHttpClient httpClient = null;
 
@@ -34,7 +36,7 @@ public class HttpClientWithPoolTest extends BaseHttpClientTest{
     public void test() throws Exception {
         startUpAllThreads(getRunThreads(new HttpThread()));
         // 等待线程运行
-        for (;;);
+        for (; ; ) { ; }
     }
 
     private class HttpThread implements Runnable {
@@ -96,6 +98,6 @@ public class HttpClientWithPoolTest extends BaseHttpClientTest{
                     t.printStackTrace();
                 }
             }
-        }, 0 , 1000 * 5);
+        }, 0, 1000 * 5);
     }
 }

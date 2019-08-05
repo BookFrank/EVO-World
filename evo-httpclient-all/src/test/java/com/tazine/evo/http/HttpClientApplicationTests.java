@@ -47,5 +47,4 @@ public class HttpClientApplicationTests {
 		System.out.println("haha");
 		Thread.sleep(10000);
 	}
-
 }
