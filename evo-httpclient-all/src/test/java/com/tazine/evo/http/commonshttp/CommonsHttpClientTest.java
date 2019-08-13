@@ -1,6 +1,5 @@
 package com.tazine.evo.http.commonshttp;
 
-import com.tazine.evo.http.ThreadPoolTests;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
