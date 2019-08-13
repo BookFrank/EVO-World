@@ -25,7 +25,7 @@ public class AsyncHttpDemo {
     }
 
     /**
-     * 异步 HTTP 请求
+     * 异步 HTTP 请求，main 线程发起的请求但是是 AsyncHttpClient 处理的 Response
      */
     private static void asyncRequest(){
         String url = "https://www.baidu.com/home/msg/data/personalcontent";
@@ -38,7 +38,7 @@ public class AsyncHttpDemo {
             // Response 对象包括HTTP请求头和响应体
             @Override
             public Response onCompleted(Response response) throws Exception {
-                System.out.println("完成请求");
+                System.out.println(Thread.currentThread().getName() + " - " + "完成请求");
                 return response;
             }
 
@@ -51,7 +51,7 @@ public class AsyncHttpDemo {
 
         try {
             Response response = f.get();
-            System.out.println(response.getResponseBody());
+            System.out.println(Thread.currentThread().getName() + " - " + response.getResponseBody());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
