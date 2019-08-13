@@ -30,6 +30,7 @@
         <module>evo-springboot-mybatis</module>
         <module>evo-boot-hibernate</module>
         <module>evo-boot-mybatis</module>
+        <module>evo-boot-log</module>
     </modules>
 
     <name>EVO-World</name>
