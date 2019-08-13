@@ -19,5 +19,4 @@ public class OkHttpConfig {
         // 设置连接超时
         return httpClient;
     }
-
 }

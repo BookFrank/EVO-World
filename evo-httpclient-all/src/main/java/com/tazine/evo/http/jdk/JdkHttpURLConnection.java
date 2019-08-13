@@ -14,7 +14,7 @@ import java.util.List;
  * @author frank
  * @date 2018/12/05
  */
-public class JdkHttp {
+public class JdkHttpURLConnection {
 
     public static void main(String[] args) {
         String addr = "https://www.huxiu.com/article/274462.html";
