@@ -31,6 +31,7 @@
         <module>evo-boot-hibernate</module>
         <module>evo-boot-mybatis</module>
         <module>evo-boot-log</module>
+        <module>evo-boot-pattern</module>
     </modules>
 
     <name>EVO-World</name>
