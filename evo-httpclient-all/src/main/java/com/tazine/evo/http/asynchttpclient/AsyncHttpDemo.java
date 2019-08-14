@@ -22,6 +22,7 @@ public class AsyncHttpDemo {
         //syncRequest();
 
         asyncRequest();
+
     }
 
     /**
@@ -39,6 +40,7 @@ public class AsyncHttpDemo {
             @Override
             public Response onCompleted(Response response) throws Exception {
                 System.out.println(Thread.currentThread().getName() + " - " + "完成请求");
+                System.out.println(Thread.currentThread().getName() + " - " + response.getResponseBody());
                 return response;
             }
 
