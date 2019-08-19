@@ -12,9 +12,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @EnableAsync
 @SpringBootApplication
-public class EvoAsyncAllApplication {
+public class AsyncApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EvoAsyncAllApplication.class, args);
+        SpringApplication.run(AsyncApplication.class, args);
     }
 }
