@@ -18,7 +18,6 @@ public class AppService {
      * 让该线程一直沉睡
      */
     public void syncSleep() {
-        System.out.println("ThreadName： " + Thread.currentThread().getName());
         try {
             TimeUnit.DAYS.sleep(1);
         } catch (Exception e) {
