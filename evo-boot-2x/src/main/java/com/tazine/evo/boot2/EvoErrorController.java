@@ -1,5 +1,6 @@
 package com.tazine.evo.boot2;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.web.servlet.error.AbstractErrorController;
@@ -25,6 +26,7 @@ public class EvoErrorController extends AbstractErrorController {
 
     public EvoErrorController(ErrorAttributes errorAttributes) {
         super(errorAttributes);
+        //System.out.println(JSON.toJSONString(errorAttributes));
         this.errorAttributes = errorAttributes;
     }
 
@@ -104,25 +106,36 @@ public class EvoErrorController extends AbstractErrorController {
     // 实现四
     @RequestMapping(value = ERROR_PATH)
     public JSONObject error(HttpServletRequest request, HttpServletRequest response) {
-        Map<String, Object> body = getErrorAttributes(request, true);
-
-        // 3. 组装成业务自定义的通用响应
-        int status = (int)body.get("status");  // 获取标准 HTTP 响应状态
-        String message = (String)body.get("message"); // 程序执行过程中的错误信息
-        String errorMessage = (String)body.get("error");
-        String trace = (String)body.get("trace");
-        System.err.println(trace);
-
-        // 1. 校验输入参数中是否有 debug 参数
-        // 2. 通过 debug=true 来判断是否需要输出堆栈错误信息
-        boolean debug = StringUtils.equalsIgnoreCase("true", request.getParameter("debug"));
-
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("code", status);
-        jsonObject.put("msg", errorMessage);
-        jsonObject.put("data", message);
-        if (debug){
-            jsonObject.put("trace", trace);
+        try {
+            Map<String, Object> body = getErrorAttributes(request, true);
+
+            // 3. 组装成业务自定义的通用响应
+            int status = (int)body.get("status");  // 获取标准 HTTP 响应状态
+            String message = (String)body.get("message"); // 程序执行过程中的错误信息
+            String errorMessage = (String)body.get("error");
+            String trace = (String)body.get("trace");
+
+            // 测试出异常了怎么办
+            String frank = (String)body.get("frank");
+            System.err.println(frank.startsWith("CEO"));
+
+            // 1. 校验输入参数中是否有 debug 参数
+            // 2. 通过 debug=true 来判断是否需要输出堆栈错误信息
+            boolean debug = StringUtils.equalsIgnoreCase("true", request.getParameter("debug"));
+
+            jsonObject.put("code", status);
+            jsonObject.put("msg", errorMessage);
+            jsonObject.put("data", message);
+            if (debug){
+                jsonObject.put("trace", trace);
+            }
+        }catch (Exception e){
+            jsonObject.put("code", 500);
+            jsonObject.put("msg", e.getMessage());
+            jsonObject.put("data", e.getLocalizedMessage());
+            jsonObject.put("trace", e.getStackTrace());
+            //e.printStackTrace();
         }
         return jsonObject;
     }
