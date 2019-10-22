@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2019/10/21
  */
 @RestController
-public class TestController {
+public class TestRestController {
 
     @Autowired
     private TestService testService;

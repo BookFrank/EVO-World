@@ -15,7 +15,7 @@ import java.util.Map;
  * @author frank
  * @date 2019/10/21
  */
-@RestController
+//@RestController
 public class EvoErrorController extends AbstractErrorController {
 
     private final static String ERROR_PATH = "/error";
