@@ -1,5 +1,6 @@
 package com.tazine.evo.boot2.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  * @date 2019/10/21
  */
 @Data
+@AllArgsConstructor
 public class PlayerDO {
 
     private String name;

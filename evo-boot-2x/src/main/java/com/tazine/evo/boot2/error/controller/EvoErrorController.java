@@ -1,11 +1,10 @@
-package com.tazine.evo.boot2;
+package com.tazine.evo.boot2.error.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.tazine.evo.boot2.error.EvoRequestException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.web.servlet.error.AbstractErrorController;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -141,9 +140,9 @@ public class EvoErrorController extends AbstractErrorController {
     }
 
     protected String getErrorMessage(Throwable throwable) {
-        if (throwable instanceof EvoException) {
+        if (throwable instanceof EvoRequestException) {
             // 如果 自定义异常信息可以显示给用户
-            return ((EvoException)throwable).getMessage();
+            return ((EvoRequestException)throwable).getMessage();
         }
         return throwable.getMessage();
     }
