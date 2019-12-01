@@ -32,6 +32,11 @@
         <module>evo-boot-mybatis</module>
         <module>evo-boot-log</module>
         <module>evo-boot-pattern</module>
+        <module>evo-boot-lucene</module>
+        <module>evo-boot-proguard</module>
+        <module>evo-boot-2x</module>
+        <module>evo-cluster</module>
+        <module>evo-machine-learning</module>
     </modules>
 
     <name>EVO-World</name>
