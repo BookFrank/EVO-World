@@ -8,9 +8,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+import javax.servlet.http.HttpServletResponse;
 import java.lang.annotation.Annotation;
 
 /**
@@ -40,15 +42,25 @@ public class EvoJsonResponseAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType,
                                   Class<? extends HttpMessageConverter<?>> selectedConverterType,
                                   ServerHttpRequest request, ServerHttpResponse response) {
+        HttpServletResponse httpServletResponse = ((ServletServerHttpResponse)response).getServletResponse();
+        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpServletResponse.setHeader("Access-Control-Allow-Methods", "*");
+        //试探请求过期时间
+        httpServletResponse.setHeader("Access-Control-Max-Age", "3600");
+        //允许请求头中加入Authorization
+        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization,Content-Type");
+        //允许发送cookie
+        httpServletResponse.setHeader("Access-Control-Allow-Credentials", "false");
+
         // 防止重复包裹
         if (body instanceof HttpResult) {
             return body;
         }
-        HttpResult result = RestResponseBuilder.buildSuccessResponse((String)body);
         if (body instanceof String){
+            HttpResult result = RestResponseBuilder.buildSuccessResponse((String)body);
             return JSON.toJSONString(result);
         }else {
-            return RestResponseBuilder.buildSuccessResponse(result);
+            return RestResponseBuilder.buildSuccessResponse(body);
         }
     }
 }

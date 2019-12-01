@@ -107,6 +107,9 @@ public class EvoErrorController extends AbstractErrorController {
     public JSONObject error(HttpServletRequest request, HttpServletRequest response) {
         JSONObject jsonObject = new JSONObject();
         try {
+            boolean debug = StringUtils.equalsIgnoreCase("true", request.getParameter("debug"));
+            getCause(request);
+
             Map<String, Object> body = getErrorAttributes(request, true);
 
             // 3. 组装成业务自定义的通用响应
@@ -116,12 +119,11 @@ public class EvoErrorController extends AbstractErrorController {
             String trace = (String)body.get("trace");
 
             // 测试出异常了怎么办
-            String frank = (String)body.get("frank");
-            System.err.println(frank.startsWith("CEO"));
+            //String frank = (String)body.get("frank");
+            //System.err.println(frank.startsWith("CEO"));
 
             // 1. 校验输入参数中是否有 debug 参数
             // 2. 通过 debug=true 来判断是否需要输出堆栈错误信息
-            boolean debug = StringUtils.equalsIgnoreCase("true", request.getParameter("debug"));
 
             jsonObject.put("code", status);
             jsonObject.put("msg", errorMessage);

@@ -3,6 +3,7 @@ package com.tazine.evo.boot2;
 import com.alibaba.fastjson.JSON;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.context.ApplicationContext;
  * @author frank
  * @date 2018/11/11
  */
+@ServletComponentScan
 @SpringBootApplication
 public class Application {
 
