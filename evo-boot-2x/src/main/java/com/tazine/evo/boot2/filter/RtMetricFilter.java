@@ -1,14 +1,11 @@
 package com.tazine.evo.boot2.filter;
 
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.StopWatch;
+import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 /**
  * EvoBootFilter
@@ -16,10 +13,8 @@ import java.net.URISyntaxException;
  * @author frank
  * @date 2018/11/07
  */
-@WebFilter(urlPatterns = "/*")
+@WebFilter(urlPatterns = "/*", filterName = "C")
 public class RtMetricFilter implements Filter {
-
-    private final static StopWatch stopWatch = new StopWatch("RT-Watch");
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -29,15 +24,15 @@ public class RtMetricFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
         throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) servletRequest;
+        HttpServletRequest req = (HttpServletRequest)servletRequest;
         String uri = req.getRequestURI();
         String clientKey = req.getParameter("clientKey");
 
         long start = System.currentTimeMillis();
-        stopWatch.start(uri);
+        System.out.println("进入 rt filter");
         filterChain.doFilter(servletRequest, servletResponse);
-        stopWatch.stop();
-        System.err.println(uri + ", rt=" + (System.currentTimeMillis() - start) + " watch=" + stopWatch.getTotalTimeMillis());
+        System.err.println(uri + ", rt=" + (System.currentTimeMillis() - start));
+        System.out.println("退出 rt filter");
         //System.err.println("退出 EvoBootFilter");
     }
 

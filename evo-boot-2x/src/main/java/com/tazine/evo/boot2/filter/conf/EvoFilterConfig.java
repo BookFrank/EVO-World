@@ -19,7 +19,9 @@ public class EvoFilterConfig {
         FilterRegistrationBean<ManualConfFilter> registration = new FilterRegistrationBean<ManualConfFilter>();
         registration.setFilter(manualConfFilter());
         registration.addUrlPatterns("/*");
-        registration.setName("responseAliWorkDomainFilter");
+        //registration.setOrder(2);
+        //registration.setName("manualConfFilter");
+        registration.setName("B");
         return registration;
     }
 
