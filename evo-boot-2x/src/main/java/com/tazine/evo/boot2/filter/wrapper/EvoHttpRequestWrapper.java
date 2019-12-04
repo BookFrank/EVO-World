@@ -26,6 +26,7 @@ public class EvoHttpRequestWrapper extends HttpServletRequestWrapper {
     @Override
     public ServletInputStream getInputStream() throws IOException {
         ServletInputStream stream = request.getInputStream();
+        int len = stream.available();
         String contentEncoding = request.getHeader("Content-Encoding");
         if (null != contentEncoding && contentEncoding.indexOf("gzip") != -1) {
             try {
