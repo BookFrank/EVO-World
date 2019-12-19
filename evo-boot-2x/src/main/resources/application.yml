@@ -24,4 +24,6 @@ management:
 server:
   port: 7001
 
+evo:
+  author: jiaer
 
