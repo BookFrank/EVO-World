@@ -19,5 +19,6 @@ public class SyncNonBlocking {
         new Thread(() -> {
             System.out.println(Thread.currentThread().getName() + "线程，");
         });
+        return null;
     }
 }

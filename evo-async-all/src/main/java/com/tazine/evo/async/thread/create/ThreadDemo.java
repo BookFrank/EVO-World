@@ -17,7 +17,7 @@ public class ThreadDemo extends Thread {
     @Override
     public void run() {
         String threadName = this.getName();
-        if (ticketHolder.getTicketNum().decrementAndGet() >= 0) {
+        if (ticketHolder.getTicketNum().get() > 0 && ticketHolder.getTicketNum().decrementAndGet() >= 0) {
             System.out.println(this.getName() + ": get 1 ticket");
         }else {
             System.out.println(this.getName() + ": no ticket " + ticketHolder.getTicketNum().get());

@@ -17,9 +17,9 @@ public class RunableDemo implements Runnable {
     @Override
     public void run() {
         String threadName = Thread.currentThread().getName();
-        if (ticketHolder.getTicketNum().decrementAndGet() >= 0) {
+        if (ticketHolder.getTicketNum().get() > 0 && ticketHolder.getTicketNum().decrementAndGet() >= 0) {
             System.out.println(threadName + ": get 1 ticket");
-        }else {
+        } else {
             System.out.println(threadName + ": no ticket " + ticketHolder.getTicketNum().get());
         }
     }
