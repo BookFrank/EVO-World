@@ -1,5 +1,8 @@
 package com.tazine.evo.async.concurrent;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
 /**
  * Test
  *
@@ -8,19 +11,37 @@ package com.tazine.evo.async.concurrent;
  */
 public class Test {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
         //syncBlocking();
 
+        //syncNonBlocking();
+
+
+    }
+
+    private static void asyncBlocking() throws ExecutionException, InterruptedException {
+        AsyncBlocking asyncBlocking = new AsyncBlocking();
+        String ret = asyncBlocking.exec();
 
     }
 
     /**
      * 同步非阻塞，main 线程发起一个同步非阻塞方法调用后，可以
      */
-    private static void syncNonBlocking(){
+    private static void syncNonBlocking() throws Exception {
         SyncNonBlocking syncNonBlocking = new SyncNonBlocking();
-        syncNonBlocking.exec();
-        System.out.println(Thread.currentThread().getName() + "线程执行下一个业务逻辑");
+        Future<String> future = syncNonBlocking.exec();
+        // 在轮询的过程中 main 线程始终处于 RUNNING 状态，并没有被阻塞，但是是因为消息通知方式是同步的，所以需要main线程不断的轮询
+        while (true){
+            if (future.isDone()){
+                String ret = future.get();
+                System.out.println(Thread.currentThread().getName() + "线程，拿到此前同步调用的结果：" + ret);
+                break;
+            }else {
+                System.out.println(Thread.currentThread().getName() + "线程,执行下一个业务逻辑");
+                Thread.sleep(1000);
+            }
+        }
     }
 
     /**
