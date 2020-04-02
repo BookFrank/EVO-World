@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: evo-concurrent
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/test
+#    username: root
+#    password: jiaer.ly
+#    driver-class-name: com.mysql.jdbc.Driver
+#
+#management:
+#  server:
+#    port: 7002
+#  endpoints:
+#    enabled-by-default: true
+#
+#  #  endpoints:
+#  #    web:
+#  #      exposure:
+#  #        include: *
+#  endpoint:
+#    health:
+#      show-details: always
+#
+#server:
+#  port: 7001
+#
+#evo:
+#  author: jiaer
+#
