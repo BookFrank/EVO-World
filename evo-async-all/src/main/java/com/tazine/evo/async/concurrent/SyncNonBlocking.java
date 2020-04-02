@@ -27,8 +27,7 @@ public class SyncNonBlocking {
                 return "Hello From SyncNonBlocking";
             }
         });
-        return null;
-        //new Thread(task).start();
-        //return task;
+        new Thread(task).start();
+        return task;
     }
 }
