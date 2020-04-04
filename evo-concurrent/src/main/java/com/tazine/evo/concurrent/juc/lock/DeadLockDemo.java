@@ -1,4 +1,4 @@
-package com.tazine.evo.concurrent.lock;
+package com.tazine.evo.concurrent.juc.lock;
 
 /**
  * DeadLockDemo

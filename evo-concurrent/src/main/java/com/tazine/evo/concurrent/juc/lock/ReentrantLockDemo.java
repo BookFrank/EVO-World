@@ -1,4 +1,4 @@
-package com.tazine.evo.concurrent.lock;
+package com.tazine.evo.concurrent.juc.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -15,12 +15,14 @@ public class ReentrantLockDemo {
     public void service1() {
         try {
             lock.lock();
+            lock.lock();
             System.out.println(Thread.currentThread().getName() + ", invoke service1 method");
             Thread.sleep(1000 * 1);
             service2();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            lock.unlock();
             lock.unlock();
         }
     }
@@ -39,7 +41,8 @@ public class ReentrantLockDemo {
 
     public static void main(String[] args) {
 
-        ReentrantLockDemo lockDemo = new ReentrantLockDemo();
+        ReentrantLockDemo
+            lockDemo = new ReentrantLockDemo();
 
         new Thread(() -> {
             lockDemo.service1();
@@ -49,5 +52,4 @@ public class ReentrantLockDemo {
             lockDemo.service2();
         }).start();
     }
-
 }
