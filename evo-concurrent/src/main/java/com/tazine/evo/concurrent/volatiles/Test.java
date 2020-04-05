@@ -1,6 +1,8 @@
 package com.tazine.evo.concurrent.volatiles;
 
 /**
+ * Test
+ *
  * @author jiaer.ly
  * @date 2020/03/30
  */
@@ -16,7 +18,7 @@ public class Test {
 
         volatileThread.start();
 
-        Thread.sleep(1000 * 15);
+        Thread.sleep(1000 * 10);
 
         normalThread.setFlag(false);
         volatileThread.setFlag(false);

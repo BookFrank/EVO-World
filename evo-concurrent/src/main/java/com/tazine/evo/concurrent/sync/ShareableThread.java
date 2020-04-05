@@ -6,22 +6,22 @@ package com.tazine.evo.concurrent.sync;
  */
 public class ShareableThread extends Thread{
 
-    private Integer count;
+    private TicketHolder count;
 
-    public ShareableThread(Integer count, String name) {
+    public ShareableThread(TicketHolder count, String name) {
         this.count = count;
         this.setName(name);
     }
 
     @Override
-    public synchronized void run() {
+    public void run() {
         try {
-            count--;
             // 使用 sleep 模拟计算机可能会出现的各种情况
-            Thread.sleep(10);
+            Thread.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("线程-" + Thread.currentThread().getName() + " 计算，count=" + count);
+        count.decr();
+        //System.out.println("线程-" + Thread.currentThread().getName() + " 计算，count=" + count.getCount());
     }
 }

@@ -21,13 +21,13 @@ public class Test {
      * 共享数据就是指多个线程可以访问同一个变量，多线程并发访问同一个资源时，那么一定会出现非线程安全的问题
      */
     private static void shareableDataThreadRun() throws InterruptedException {
-        Integer count = 5;
-        for (int i = 0; i < 5; i++) {
-            Thread thread = new ShareableThread(count, i + "");
+        TicketHolder ticketHolder = new TicketHolder(5);
+        for (int i = 1; i < 6; i++) {
+            Thread thread = new ShareableThread(ticketHolder, i + "");
             thread.start();
         }
-        TimeUnit.SECONDS.sleep(10);
-        System.out.println(count);
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println(ticketHolder.getCount());
     }
 
     /**
