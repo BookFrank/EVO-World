@@ -1,5 +1,6 @@
 package com.tazine.evo.db;
 
+import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author frank
  * @date 2019/1/10
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = MybatisAutoConfiguration.class)
 public class Application {
 
     public static void main(String[] args) {

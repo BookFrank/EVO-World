@@ -13,7 +13,7 @@ import java.util.Map;
  * @date 2018/04/12
  */
 @ConfigurationProperties(prefix = "spring.tddl")
-public class MultiTddlProperties extends TddlProperties {
+public class MultiMybatisProperties extends EvoMybatisProperties {
 
     private Map<String, String> mapperLocationss;
     private Map<String, String> typeAliasesPackages;
@@ -57,13 +57,13 @@ public class MultiTddlProperties extends TddlProperties {
      *
      * @return map
      */
-    public Map<String, TddlProperties> getPropertiesMap() {
+    public Map<String, EvoMybatisProperties> getPropertiesMap() {
         if (null == basePackages || basePackages.size() == 0) {
             return Collections.emptyMap();
         }
-        Map<String, TddlProperties> propertiesMap = new HashMap<String, TddlProperties>();
+        Map<String, EvoMybatisProperties> propertiesMap = new HashMap<String, EvoMybatisProperties>();
         for (String name : basePackages.keySet()) {
-            TddlProperties properties = new TddlProperties();
+            EvoMybatisProperties properties = new EvoMybatisProperties();
             if (mapperLocationss != null && mapperLocationss.containsKey(name)){
                 properties.setMapperLocations(mapperLocationss.get(name));
             }

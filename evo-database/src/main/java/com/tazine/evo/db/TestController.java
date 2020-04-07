@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/04/07
  */
 @RestController
-@EnableConfigurationProperties(MultiTddlProperties.class)
+@EnableConfigurationProperties(MultiMybatisProperties.class)
 public class TestController {
 
     @Autowired
-    private MultiTddlProperties properties;
+    private MultiMybatisProperties properties;
 
     @RequestMapping("/test")
-    public MultiTddlProperties test(){
+    public MultiMybatisProperties test(){
         return properties;
     }
 }

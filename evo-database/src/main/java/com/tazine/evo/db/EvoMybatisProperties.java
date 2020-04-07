@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2018/04/12
  */
 @ConfigurationProperties(prefix = "spring.tddl")
-public class TddlProperties {
+public class EvoMybatisProperties {
 
     private String mapperLocations;
     private String typeAliasesPackage;

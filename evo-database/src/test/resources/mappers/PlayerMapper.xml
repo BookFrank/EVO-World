@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 是 mapper 的完整包名 -->
+<mapper namespace="com.tazine.evo.db.mapper.PlayerMapper">
+
+    <select id="getPlayerByName" parameterType="String" resultType="Player">
+        SELECT * FROM tb_nba_player where name = #{name}
+    </select>
+
+    <select id="list" resultType="Player">
+        SELECT name, num, team FROM tb_nba_player
+    </select>
+
+</mapper>
