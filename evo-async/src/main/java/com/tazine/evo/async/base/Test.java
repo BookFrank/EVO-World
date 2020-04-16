@@ -1,4 +1,4 @@
-package com.tazine.evo.async.jvm;
+package com.tazine.evo.async.base;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;

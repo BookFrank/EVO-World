@@ -1,4 +1,4 @@
-package com.tazine.evo.async.jvm;
+package com.tazine.evo.async.base;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;

@@ -1,4 +1,4 @@
-package com.tazine.evo.async.jvm;
+package com.tazine.evo.async.base;
 
 /**
  * SyncBlocking
