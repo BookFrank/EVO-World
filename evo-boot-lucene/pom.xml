@@ -16,7 +16,7 @@
     <url>http://www.example.com</url>
 
     <properties>
-        <lucene.version>6.1.0</lucene.version>
+        <lucene.version>8.4.1</lucene.version>
         <spatial4j.version>0.6</spatial4j.version>
         <guava.version>19.0</guava.version>
     </properties>
